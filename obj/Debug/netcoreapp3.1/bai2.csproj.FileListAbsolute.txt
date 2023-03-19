@@ -1,0 +1,14 @@
+D:\C#\ontaptx1\bai2\bin\Debug\netcoreapp3.1\bai2.exe
+D:\C#\ontaptx1\bai2\bin\Debug\netcoreapp3.1\bai2.deps.json
+D:\C#\ontaptx1\bai2\bin\Debug\netcoreapp3.1\bai2.runtimeconfig.json
+D:\C#\ontaptx1\bai2\bin\Debug\netcoreapp3.1\bai2.runtimeconfig.dev.json
+D:\C#\ontaptx1\bai2\bin\Debug\netcoreapp3.1\bai2.dll
+D:\C#\ontaptx1\bai2\bin\Debug\netcoreapp3.1\bai2.pdb
+D:\C#\ontaptx1\bai2\obj\Debug\netcoreapp3.1\bai2.csproj.AssemblyReference.cache
+D:\C#\ontaptx1\bai2\obj\Debug\netcoreapp3.1\bai2.GeneratedMSBuildEditorConfig.editorconfig
+D:\C#\ontaptx1\bai2\obj\Debug\netcoreapp3.1\bai2.AssemblyInfoInputs.cache
+D:\C#\ontaptx1\bai2\obj\Debug\netcoreapp3.1\bai2.AssemblyInfo.cs
+D:\C#\ontaptx1\bai2\obj\Debug\netcoreapp3.1\bai2.csproj.CoreCompileInputs.cache
+D:\C#\ontaptx1\bai2\obj\Debug\netcoreapp3.1\bai2.dll
+D:\C#\ontaptx1\bai2\obj\Debug\netcoreapp3.1\bai2.pdb
+D:\C#\ontaptx1\bai2\obj\Debug\netcoreapp3.1\bai2.genruntimeconfig.cache
