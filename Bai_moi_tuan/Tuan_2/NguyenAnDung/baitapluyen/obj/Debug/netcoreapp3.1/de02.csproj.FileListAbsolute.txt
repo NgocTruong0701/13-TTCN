@@ -1,0 +1,14 @@
+D:\C#\ontaptx1\de02\bin\Debug\netcoreapp3.1\de02.exe
+D:\C#\ontaptx1\de02\bin\Debug\netcoreapp3.1\de02.deps.json
+D:\C#\ontaptx1\de02\bin\Debug\netcoreapp3.1\de02.runtimeconfig.json
+D:\C#\ontaptx1\de02\bin\Debug\netcoreapp3.1\de02.runtimeconfig.dev.json
+D:\C#\ontaptx1\de02\bin\Debug\netcoreapp3.1\de02.dll
+D:\C#\ontaptx1\de02\bin\Debug\netcoreapp3.1\de02.pdb
+D:\C#\ontaptx1\de02\obj\Debug\netcoreapp3.1\de02.GeneratedMSBuildEditorConfig.editorconfig
+D:\C#\ontaptx1\de02\obj\Debug\netcoreapp3.1\de02.AssemblyInfoInputs.cache
+D:\C#\ontaptx1\de02\obj\Debug\netcoreapp3.1\de02.AssemblyInfo.cs
+D:\C#\ontaptx1\de02\obj\Debug\netcoreapp3.1\de02.csproj.CoreCompileInputs.cache
+D:\C#\ontaptx1\de02\obj\Debug\netcoreapp3.1\de02.dll
+D:\C#\ontaptx1\de02\obj\Debug\netcoreapp3.1\de02.pdb
+D:\C#\ontaptx1\de02\obj\Debug\netcoreapp3.1\de02.genruntimeconfig.cache
+D:\C#\ontaptx1\de02\obj\Debug\netcoreapp3.1\de02.csproj.AssemblyReference.cache
