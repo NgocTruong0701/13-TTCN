@@ -1,0 +1,16 @@
+C:\Users\ADMIN\OneDrive\Máy tính\13-TTCN\Bai_moi_tuan\Tuan_3\NguyenAnDung\gamenho\gamenho\bin\Debug\net5.0\gamenho.exe
+C:\Users\ADMIN\OneDrive\Máy tính\13-TTCN\Bai_moi_tuan\Tuan_3\NguyenAnDung\gamenho\gamenho\bin\Debug\net5.0\gamenho.deps.json
+C:\Users\ADMIN\OneDrive\Máy tính\13-TTCN\Bai_moi_tuan\Tuan_3\NguyenAnDung\gamenho\gamenho\bin\Debug\net5.0\gamenho.runtimeconfig.json
+C:\Users\ADMIN\OneDrive\Máy tính\13-TTCN\Bai_moi_tuan\Tuan_3\NguyenAnDung\gamenho\gamenho\bin\Debug\net5.0\gamenho.runtimeconfig.dev.json
+C:\Users\ADMIN\OneDrive\Máy tính\13-TTCN\Bai_moi_tuan\Tuan_3\NguyenAnDung\gamenho\gamenho\bin\Debug\net5.0\gamenho.dll
+C:\Users\ADMIN\OneDrive\Máy tính\13-TTCN\Bai_moi_tuan\Tuan_3\NguyenAnDung\gamenho\gamenho\bin\Debug\net5.0\gamenho.pdb
+C:\Users\ADMIN\OneDrive\Máy tính\13-TTCN\Bai_moi_tuan\Tuan_3\NguyenAnDung\gamenho\gamenho\obj\Debug\net5.0\gamenho.csproj.AssemblyReference.cache
+C:\Users\ADMIN\OneDrive\Máy tính\13-TTCN\Bai_moi_tuan\Tuan_3\NguyenAnDung\gamenho\gamenho\obj\Debug\net5.0\gamenho.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ADMIN\OneDrive\Máy tính\13-TTCN\Bai_moi_tuan\Tuan_3\NguyenAnDung\gamenho\gamenho\obj\Debug\net5.0\gamenho.AssemblyInfoInputs.cache
+C:\Users\ADMIN\OneDrive\Máy tính\13-TTCN\Bai_moi_tuan\Tuan_3\NguyenAnDung\gamenho\gamenho\obj\Debug\net5.0\gamenho.AssemblyInfo.cs
+C:\Users\ADMIN\OneDrive\Máy tính\13-TTCN\Bai_moi_tuan\Tuan_3\NguyenAnDung\gamenho\gamenho\obj\Debug\net5.0\gamenho.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\OneDrive\Máy tính\13-TTCN\Bai_moi_tuan\Tuan_3\NguyenAnDung\gamenho\gamenho\obj\Debug\net5.0\gamenho.dll
+C:\Users\ADMIN\OneDrive\Máy tính\13-TTCN\Bai_moi_tuan\Tuan_3\NguyenAnDung\gamenho\gamenho\obj\Debug\net5.0\refint\gamenho.dll
+C:\Users\ADMIN\OneDrive\Máy tính\13-TTCN\Bai_moi_tuan\Tuan_3\NguyenAnDung\gamenho\gamenho\obj\Debug\net5.0\gamenho.pdb
+C:\Users\ADMIN\OneDrive\Máy tính\13-TTCN\Bai_moi_tuan\Tuan_3\NguyenAnDung\gamenho\gamenho\obj\Debug\net5.0\gamenho.genruntimeconfig.cache
+C:\Users\ADMIN\OneDrive\Máy tính\13-TTCN\Bai_moi_tuan\Tuan_3\NguyenAnDung\gamenho\gamenho\obj\Debug\net5.0\ref\gamenho.dll
