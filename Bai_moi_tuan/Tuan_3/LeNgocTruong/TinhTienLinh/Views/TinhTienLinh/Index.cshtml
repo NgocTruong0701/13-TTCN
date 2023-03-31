@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Nhap thong tin</h2>
+
+<form action="/TinhTienLinh/Tinh" method="post">
+    <table class="table table-bordered table-striped" style="font-family:Arial; font-weight:bold">
+        <tr>
+            <td>Ma NV</td>
+            <td><input name="Id" /></td>
+        </tr>
+        <tr>
+            <td>Bac luong</td>
+            <td><input name="BacLuong" /></td>
+        </tr>
+        <tr>
+            <td>Ngay cong</td>
+            <td><input name="NgayCong" /></td>
+        </tr>
+        <tr>
+            <td>Chuc vu</td>
+            <td>
+                <select name="ChucVu">
+                    <option value="1" >Truong phong</option>
+                    <option value="2" >Pho phong</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Gioi tinh</td>
+            <td>
+                <input type="radio" name="GioiTinh" value="1" />Nam
+                <input type="radio" name="GioiTinh" value="2" />Nu
+            </td>
+        </tr>
+        <tr>
+            <td>Ngoai ngu</td>
+            <td>
+                <input type="checkbox" name="NgoaiNgu" value="tienganh" />Anh
+                <input type="checkbox" name="NgoaiNgu" value="tiengphap" />Phap
+                <input type="checkbox" name="NgoaiNgu" value="tiengnga" />Nga
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="text-center">
+                <input type="submit" value="Tinh"/>
+                <input type="reset" value="Xoa"/>
+            </td>
+        </tr>
+    </table>
+</form>
+
+

@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "CalculatorInput";
+}
+
+<h2>CalculatorInput Use Model</h2>
+<form name="f1" action="/Calculator/CalculatorInput" method="post">
+    <div>Nhap a: <input name="num_one" /></div>
+    <div>Nhap b: <input name="num_two" /></div>
+    <div>
+        <input type="radio" name="option" value="+" />Cong
+        <br />
+        <input type="radio" name="option" value="-" />Tru
+        <br />
+        <input type="radio" name="option" value="*" />Nhan
+        <br />
+        <input type="radio" name="option" value="/" />Chia
+        <br />
+    </div>
+    <input type="submit" value="Tinh" />
+    <div>
+        @ViewBag.Ketqua
+    </div>
+</form>
+

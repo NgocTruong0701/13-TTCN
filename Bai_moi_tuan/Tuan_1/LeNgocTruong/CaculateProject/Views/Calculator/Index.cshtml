@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Nhap du lieu</h2>
+<form name="f1" action="/Calculator/Index" method="post" >
+    <div>Nhap a: <input name="a" /></div>
+    <div>Nhap b: <input name="b" /></div>
+    <div>
+        <input type="radio" name="option" value="+" />Cong
+        <input type="radio" name="option" value="-" />Tru
+        <input type="radio" name="option" value="*" />Nhan
+        <input type="radio" name="option" value="/" />Chia
+    </div>
+    <input type="submit" value="Tinh" />
+    <div>
+        @ViewBag.Ketqua
+    </div>
+</form>
+

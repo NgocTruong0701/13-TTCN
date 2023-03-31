@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Nhap diem thi</h2>
+
+<form action="/NhapDiemThi/Tinh" method="post">
+    <table class="table table-bordered table-striped" style="font-family:Arial; font-weight:bold">
+        <thead>
+            <tr>
+                <td colspan="3" class="text-center">NHAP DIEM THI</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Ho ten thi sinh</td>
+                <td><input type="text" name="Name" /></td>
+                <td><input type="checkbox" name="option" value="1"/>Gia dinh chinh sach</td>
+            </tr>
+            <tr>
+                <td>Chon khu vuc</td>
+                <td colspan="2">
+                    <select name="KhuVuc">
+                        <option value="1">Khu vuc A</option>
+                        <option value="2">Khu vuc B</option>
+                        <option value="3">Khu vuc C</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Vao diem Toan</td>
+                <td colspan="2"><input name="DiemToan" /></td>
+            </tr>
+            <tr>
+                <td>Vao diem Ly</td>
+                <td colspan="2"><input name="DiemLy" /></td>
+            </tr>
+            <tr>
+                <td>Vao diem Hoa</td>
+                <td colspan="2"><input name="DiemHoa" /></td>
+            </tr>
+            <tr>
+                <td colspan="3" class="text-center"><input type="submit" value="Tinh" /></td>
+            </tr>
+        </tbody>
+    </table>
+</form>

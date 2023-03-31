@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Nhap Thong Tin</h2>
+<form action="/TinhTienDien/Tinh" method="post">
+    <table class="table-striped table table-bordered table-hover" style="font-family:Arial, Helvetica, sans-serif; font-weight:bold">
+        <thead>
+            <tr><td colspan="3" class="text-center">TINH TIEN DIEN</td></tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Ho ten chu ho:</td>
+                <td><input name="Name" /></td>
+                <td><input type="checkbox" name="Option"  value="1"/>Ho uu tien</td>
+            </tr>
+            <tr>
+                <td>Loai dien tieu thu</td>
+                <td colspan="2">
+                    <select name="LoaiDien">
+                        <option value="1">Sinh Hoat</option>
+                        <option value="2">Kinh Doanh</option>
+                        <option value="3">San Xuat</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Chi so vao cu:</td>
+                <td colspan="2"><input name="ChiSoCu" /></td>
+            </tr>
+            <tr>
+                <td>Chi so vao moi:</td>
+                <td colspan="2"><input name="ChiSoMoi" /></td>
+            </tr>
+            <tr>
+                <td colspan="3" class="text-center"><input type="submit" value="Tinh" /></td>
+            </tr>
+        </tbody>
+    </table>
+</form>
+
+
