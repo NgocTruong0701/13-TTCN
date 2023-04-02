@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<form name="f1" action="/Calculate/Index" method="post">
+    <table class="table table-bordered table-striped" style="font-family: Arial; font-weight: bold">
+        <tr>
+            <td>Nhap a:</td>
+            <td><input name="a" /></td>
+        </tr>
+        <tr>
+            <td>Nhap b:</td>
+            <td><input name="b" /></td>
+        </tr>
+        <tr>
+            <td>
+                <input type="radio" name="PhepTinh" value="+" />Cong
+                <input type="radio" name="PhepTinh" value="-" />Tru
+                <input type="radio" name="PhepTinh" value="*" />Nhan
+                <input type="radio" name="PhepTinh" value="/" />Chia
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="calculate" />
+            </td>
+        </tr>
+        <tr>
+            @ViewBag.Ketqua
+        </tr>
+    </table>
+</form>
+
