@@ -1,0 +1,26 @@
+﻿
+@using Read_and_Write_Infor_Employee.Models;
+
+<h2>Index</h2>
+<h1>Employee Information</h1>
+<form method="post" name="f1" action="/Employee/Save" enctype="multipart/form-data">
+    <div>Employee ID: </div>
+    <input name="Id" value="@ViewBag.Id" />
+    <div>Name:</div>
+    <input name="Name" value="@ViewBag.Name" />
+    <div>Dat of Birth:</div>
+    <input name="BirthOfDate" type="date" value="@ViewBag.BirthOfDate" />
+    <div>Salary: </div>
+    <input name="Salary" value="@ViewBag.Salary" />
+    <br />
+    Image:
+    <div>
+        <input type="file" name="Image" />
+        <hr />
+        <b>Live Preview</b>
+        <br />
+        <img src="@ViewBag.Image" style="width:150px; height:100px" />
+    </div>
+    <input type="submit" value="Save" />
+    <input type="button" value="Open" onclick="location.href='@Url.Action("Open", "Employee")'" />
+</form>
