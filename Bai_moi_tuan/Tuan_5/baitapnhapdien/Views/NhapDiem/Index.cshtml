@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Ind ex";
+}
+
+<h2>Đọc/ghi file</h2>
+<form action="" method="post">
+    <div>Mã sv : </div> <input name="Id" />
+    <div>Họ tên sv : </div> <input name="Name" />
+    <div>Điểm : </div> <input name="Mark" />
+    <hr />
+    <input type="submit" value="Lưu" formaction="/Nhapdiem/Save" />
+    <input type="submit" value="Open" formaction="/Nhapdiem/Open" />
+
+</form>
+<br />
+<p>@ViewBag.HanhDong</p>
+<p>@ViewBag.ThongTin</p>
