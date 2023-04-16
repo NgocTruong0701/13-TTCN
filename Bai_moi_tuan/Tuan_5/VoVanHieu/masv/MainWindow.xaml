@@ -1,0 +1,39 @@
+﻿<Window x:Class="masv.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:masv"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="550" Width="800"
+        FontFamily="Time New Roman" FontSize="20" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="355*"/>
+            <RowDefinition Height="79*"/>
+        </Grid.RowDefinitions>
+        <Label Content="Ma nhan vien" HorizontalAlignment="Left" Margin="100,50,0,0" VerticalAlignment="Top" Height="40" Width="150"/>
+        <Label Content="Ho ten" HorizontalAlignment="Left" Margin="100,100,0,0" VerticalAlignment="Top" Height="40" Width="150"/>
+        <Label Content="Phong ban" HorizontalAlignment="Left" Margin="100,150,0,0" VerticalAlignment="Top" Height="40" Width="150"/>
+        <Label Content="Luong" HorizontalAlignment="Left" Margin="100,200,0,0" VerticalAlignment="Top" Height="40" Width="150"/>
+        <ComboBox Name="txtPhong" HorizontalAlignment="Center" Margin="0,150,0,0" VerticalAlignment="Top" Width="200" Height="40"/>
+        <TextBox x:Name="txtMa" HorizontalAlignment="Left" Margin="300,50,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" Height="40"/>
+        <TextBox x:Name="txtTen" HorizontalAlignment="Left" Margin="300,100,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" Height="40"/>
+        <TextBox x:Name="txtLuong" HorizontalAlignment="Left" Margin="300,200,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" Height="40"/>
+        <DataGrid Margin="51,290,0,0"
+                  x:Name="dgvNV"
+                  AutoGenerateColumns="False"
+                  AlternatingRowBackground="AntiqueWhite"
+                  CanUserAddRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Ma NV" Binding="{Binding Manv}"/>
+                <DataGridTextColumn Header="Ho Ten" Binding="{Binding Hoten}"/>
+                <DataGridTextColumn Header="Ma phong ban" Binding="{Binding Mapb}"/>
+                <DataGridTextColumn Header="Luong" Binding="{Binding Luong}"/>
+                <DataGridTextColumn Header="Thu Nhap" Binding="{Binding ThuNhap}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Them" HorizontalAlignment="Left" Margin="663,62,0,0" VerticalAlignment="Top" Height="40" Width="100" Click="Button_Click"/>
+        <Button Content="Tim" HorizontalAlignment="Left" Margin="680,112,0,0" VerticalAlignment="Top" Height="40" Width="100" Click="Button_Click_1"/>
+    </Grid>
+</Window>
