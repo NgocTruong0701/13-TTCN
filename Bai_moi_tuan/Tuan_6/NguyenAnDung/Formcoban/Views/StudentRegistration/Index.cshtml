@@ -1,0 +1,72 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <h2>Student Registration Form</h2>
+        @using (Html.BeginForm("Regis2", "StudentRegistration"))
+        {
+            <table border="1" style="border-collapse: collapse" cellpadding="5">
+                <tr>
+                    <td>@Html.Label("Student Name")</td>
+                    <td>@Html.TextBox("name")</td>
+                </tr>
+                <tr>
+                    <td>@Html.Label("Gender")</td>
+                    <td>
+                        @Html.RadioButton("gender", "Male") Male
+                        @Html.RadioButton("gender", "Female") Female
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Html.Label("Email")</td>
+                    <td>@Html.TextBox("email")</td>
+                </tr>
+                <tr>
+                    <td>@Html.Label("Address")</td>
+                    <td>
+                        @{
+                            IEnumerable<string> strList = new List<string>
+                                        { "Hanoi", "Danang", "TPHCM" };
+                        }
+                        @Html.DropDownList("addr", new SelectList(strList, strList.FirstOrDefault()), "--Select--")
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Html.Label("Subjects")</td>
+                    <td>
+                        @Html.CheckBox("Java core")Java Core
+                        @Html.CheckBox("SQL Server")SQL Server
+                        @Html.CheckBox("PHP")PHP
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Html.Label("Username")</td>
+                    <td>@Html.TextBox("username")</td>
+                </tr>
+                <tr>
+                    <td>@Html.Label("Password")</td>
+                    <td>@Html.Password("password")</td>
+                </tr>
+                <tr>
+                    <td>@Html.Label("Comment")</td>
+                    <td>@Html.TextArea("comment", "")</td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Regis" /></td>
+                    <td><input type="reset" value="Cancel" /></td>
+                </tr>
+            </table>
+        }
+    </div>
+</body>
+</html>

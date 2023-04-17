@@ -1,0 +1,58 @@
+﻿
+@{
+    Layout = null;
+    float result = 0; var tinh = "";
+    var num1 = ""; var num2 = "";
+    if (IsPost)
+    {
+        num1 = Request["text1"]; num2 = Request["text2"];
+        var pheptinh = Request["pheptinh"]; if (pheptinh == "Cộng")
+        {
+            result = num1.AsFloat() + num2.AsFloat();
+        }
+        else if (pheptinh == "Trừ")
+        {
+            result = num1.AsFloat() - num2.AsFloat();
+        }
+        else if (pheptinh == "Nhân")
+        {
+            result = num1.AsFloat() * num2.AsFloat();
+        }
+        else if (pheptinh == "Chia")
+        {
+            result = num1.AsFloat() / num2.AsFloat();
+        }
+        tinh = result + "";
+    }
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Tinh toan</title>
+</head>
+<body>
+    <form action="" method="post"  align="center" style="border: 1px solid; background: wheat; width: 300px; margin: 0 auto;">
+        <br />        
+        <p>
+            <label for="text1">Nhập số thứ 1:</label>            
+            <input type="text" name="text1" value="@num1" />
+        </p>        
+        <p>
+            <label for="text2">Nhập số thứ 2:</label>            
+            <input type="text" name="text2" value="@num2" />
+        </p>        
+        <p>
+            <label for="kq">Kết quả:</label>            
+            <input type="text" name="kq" value="@tinh" style="margin-left: 42px" />
+        </p>        
+        <p>
+            <input type="submit" value="Cộng" id="cong" name="pheptinh" />            
+            <input type="submit" value="Trừ" id="tru" name="pheptinh" />
+            <input type="submit" value="Nhân" id="nhan" name="pheptinh" />            
+            <input type="submit" value="Chia" id="chia" name="pheptinh" />
+        </p>
+    </form>
+</body>
+</html>

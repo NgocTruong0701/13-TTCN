@@ -1,0 +1,96 @@
+﻿@model NguyenThiQuynhTrang_2018601093.Models.Student
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Detail</title>
+</head>
+<body>
+    <div align="center">
+        <h2>Registration Form</h2>
+        <table border="1" style="border-collapse: collapse" cellpadding="5">
+            <tr style="background: greenyellow;">
+                <th style="width: 20%">First Name</th>
+                <th style="width: 20%">Last Name</th>
+                <th style="width: 10%">Gender: </th>
+                <th style="width: 20%">Email: </th>
+                <th style="width: 10%">Password: </th>
+                <th style="width: 20%">City: </th>
+            </tr>
+            <tr  style="background: skyblue;">
+                <td align="center"> @Html.DisplayFor(model => model.fname)</td>
+                <td align="center"> @Html.DisplayFor(model => model.lname)</td>
+                <td align="center"> @Html.DisplayFor(model => model.gender)</td>
+                <td align="center"> @Html.DisplayFor(model => model.email)</td>
+                <td align="center"> @Html.DisplayFor(model => model.password)</td>
+                <td align="center"> @Html.DisplayFor(model => model.addr)</td>
+            </tr>
+            <tr>
+                <td colspan="3"><input type="submit" value="Regis" /></td>
+                <td colspan="3"><input type="reset" value="Cancel" /></td>
+            </tr>
+        </table>
+        @*<hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.fname)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.fname)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.lname)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.lname)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.email)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.email)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.password)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.password)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.addr)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.addr)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.gender)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.gender)
+            </dd>
+
+        </dl>*@
+    </div>
+    <p  align="center">
+        @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+        @Html.ActionLink("Back to List", "Bai2_Form")
+    </p>
+</body>
+</html>

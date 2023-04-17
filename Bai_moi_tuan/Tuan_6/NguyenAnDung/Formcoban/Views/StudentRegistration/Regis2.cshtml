@@ -1,0 +1,148 @@
+﻿@model NguyenThiQuynhTrang_2018601093.Models.Student
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Regis</title>
+</head>
+<body>
+    <div>
+        <h4>Student</h4>
+        <table border="1" style="border-collapse: collapse" cellpadding="5">
+            <tr>
+                <th style="width: 50%">Student Name</th>
+                <td> @Html.DisplayFor(model => model.name)</td>
+            </tr>
+            <tr>
+                <th>Gender: </th>
+                <td> @Html.DisplayFor(model => model.gender)</td>
+            </tr>
+            <tr>
+                <th>Email: </th>
+                <td> @Html.DisplayFor(model => model.email)</td>
+            </tr>
+            <tr>
+                <th>Address: </th>
+                <td> @Html.DisplayFor(model => model.addr)</td>
+            </tr>
+            <tr>
+                <th>Subject: </th>
+                <td> @Html.DisplayFor(model => model.subjects)</td>
+            </tr>
+            <tr>
+                <th>User name: </th>
+                <td> @Html.DisplayFor(model => model.username)</td>
+            </tr>
+            <tr>
+                <th>Password: </th>
+                <td> @Html.DisplayFor(model => model.password)</td>
+            </tr>
+            <tr>
+                <th>Comment: </th>
+                <td> @Html.DisplayFor(model => model.comment)</td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Regis" /></td>
+                <td><input type="reset" value="Cancel" /></td>
+            </tr>
+        </table>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+        @*<hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayFor(model => model.name)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.name)
+                </dd>
+
+                <dt>
+                    @Html.DisplayFor(model => model.gender)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.gender)
+                </dd>
+
+                <dt>
+                    @Html.DisplayFor(model => model.email)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.email)
+                </dd>
+
+                <dt>
+                    @Html.DisplayFor(model => model.addr)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.addr)
+                </dd>
+
+                <dt>
+                    @Html.DisplayFor(model => model.subjects)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.subjects)
+                </dd>
+
+                <dt>
+                    @Html.DisplayFor(model => model.username)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.username)
+                </dd>
+
+                <dt>
+                    @Html.DisplayFor(model => model.password)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.password)
+                </dd>
+
+                <dt>
+                    @Html.DisplayFor(model => model.comment)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.comment)
+                </dd>
+
+                <dt>
+                    @Html.DisplayFor(model => model.fname)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.fname)
+                </dd>
+
+                <dt>
+                    @Html.DisplayFor(model => model.lname)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.lname)
+                </dd>
+
+            </dl>
+        </div>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>*@
+</body>
+</html>

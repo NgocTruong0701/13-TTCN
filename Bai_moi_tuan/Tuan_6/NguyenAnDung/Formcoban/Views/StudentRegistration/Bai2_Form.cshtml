@@ -1,0 +1,65 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Form</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("Bai2_Detail", "StudentRegistration"))
+        {
+            <table cellspacing="0" cellpadding="5" style="margin: 0 auto; background-color: #ffc" border="1" width="400px">
+                <tr>
+                    <td colspan="2">
+                        <h2>Registration Form</h2>
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Html.Label("First Name")</td>
+                    <td>@Html.TextBox("fname")</td>
+                </tr>
+                <tr>
+                    <td>@Html.Label("Last Name")</td>
+                    <td>@Html.TextBox("lname")</td>
+                </tr>
+                <tr>
+                    <td>@Html.Label("Email")</td>
+                    <td>@Html.TextBox("email")</td>
+                </tr>
+                <tr>
+                    <td>@Html.Label("Password")</td>
+                    <td>@Html.Password("password")</td>
+                </tr>
+                <tr>
+                    <td>@Html.Label("City")</td>
+                    <td>
+                        @{
+                            IEnumerable<string> strList = new List<string> { "Hanoi", "Danang", "tpHCM" };
+                        }
+                        @Html.DropDownList("addr", new SelectList(strList, strList.FirstOrDefault()), "--Select--")
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Html.Label("Gender")</td>
+                    <td>
+                        @Html.RadioButton("gender", "Male") Male
+                        @Html.RadioButton("gender", "Female") Female
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="Save" />
+                        <input type="button" value="Cancel" />
+                    </td>
+                </tr>
+            </table>
+        }
+    </div>
+</body>
+</html>
