@@ -1,0 +1,47 @@
+﻿@model De5.Models.SanPham
+@{
+    ViewBag.Title = "NhapSP";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Nhập sinh viên</h2>
+@using(Html.BeginForm("HienThiSP", "SanPham"))
+            {
+<table>
+    <tr>
+        <td>@Html.Label("Mã sản phẩm: ")</td>
+        <td>@Html.TextBox("masp")</td>
+    </tr>
+
+    <tr>
+        <td>@Html.Label("Tên sản phẩm: ")</td>
+        <td>@Html.TextBox("tensp")</td>
+    </tr>
+
+    <tr>
+        <td>@Html.Label("Số lượng: ")</td>
+        <td>@Html.TextBox("soluong")</td>
+    </tr>
+
+    <tr>
+        <td>@Html.Label("Giá tiền: ")</td>
+        <td>@Html.TextBox("giatien")</td>
+    </tr>
+
+    <tr>
+        <td>@Html.Label("Giảm giá: ")</td>
+        <td>
+            @Html.RadioButton("giamgia", "co")
+            @Html.RadioButton("giamgia", "khong")
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td style="padding: 20px">
+            <input type="submit" name="nhap" value="Nhap" />
+        </td>
+    </tr>
+</table>
+            }
+
+

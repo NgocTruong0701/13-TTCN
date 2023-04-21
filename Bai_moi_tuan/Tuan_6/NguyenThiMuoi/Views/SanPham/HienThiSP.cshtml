@@ -1,0 +1,39 @@
+﻿@model De5.Models.SanPham
+@{
+    ViewBag.Title = "HienThiSP";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Hiển thị sản phẩm</h2>
+<table border="1" width="400" style="border-collapse:collapse" cellpadding="5">
+    <tr>
+        <td width="120px">Mã sản phẩm: </td>
+        <td width="100px">@Model.masp</td>
+    </tr>
+    <tr>
+        <td>Tên sản phẩm: </td>
+        <td>@Model.tensp</td>
+    </tr>
+
+    <tr>
+        <td>Số lượng: </td>
+        <td>@Model.soluong</td>
+    </tr>
+
+    <tr>
+        <td>Giá tiền: </td>
+        <td>@Model.giatien</td>
+    </tr>
+
+    <tr>
+        <td>Giảm giá: </td>
+        <td>@Model.giamgia</td>
+    </tr>
+
+    <tr>
+        <td>Thành tiền: </td>
+        <td>@Model.thanhtien</td>
+    </tr>
+</table>
+
+

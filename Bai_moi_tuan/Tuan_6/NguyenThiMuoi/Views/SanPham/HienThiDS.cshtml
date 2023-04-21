@@ -1,0 +1,55 @@
+﻿@model IEnumerable<De5.Models.SanPham>
+@{
+    ViewBag.Title = "HienThiDS";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    List<De5.Models.SanPham> li1 = ViewBag.tien;
+    List<De5.Models.SanPham> li2 = ViewBag.giamgia;
+
+}
+
+<h2>Danh sách 1</h2>
+<table border="1" width="400" style="border-collapse:collapse" cellpadding="5">
+    <tr>
+        <th>Mã sản phẩm</th>
+        <th>Tên sản phẩm</th>
+        <th>Số lượng</th>
+        <th>Giá tiền</th>
+        <th>Giảm giá</th>
+    </tr>
+    @foreach (var item in li1)
+    {
+        <tr>
+            <td>@item.masp</td>
+            <td>@item.tensp</td>
+            <td>@item.soluong</td>
+            <td>@item.giatien</td>
+            <td>@item.giamgia</td>
+        </tr>
+
+    }
+</table>
+
+
+<h2>Danh sách 2</h2>
+<table border="1" width="400" style="border-collapse:collapse" cellpadding="5">
+    <tr>
+        <th>Mã sản phẩm</th>
+        <th>Tên sản phẩm</th>
+        <th>Số lượng</th>
+        <th>Giá tiền</th>
+        <th>Giảm giá</th>
+    </tr>
+    @foreach (var item in li2)
+    {
+        <tr>
+            <td>@item.masp</td>
+            <td>@item.tensp</td>
+            <td>@item.soluong</td>
+            <td>@item.giatien</td>
+            <td>@item.giamgia</td>
+        </tr>
+
+    }
+</table>
+
