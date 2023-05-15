@@ -1,0 +1,74 @@
+﻿@model Example_1.Models.Product
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Chi tiet san pham</h2>
+
+<div>
+    <h4>Product</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Categoryid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Categoryid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProdName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProdName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MetaTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MetaTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImagePath)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImagePath)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quatity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quatity)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Chinh sua", "Edit", new { id = Model.Pid }) |
+    @Html.ActionLink("Quay lai", "Index")
+</p>

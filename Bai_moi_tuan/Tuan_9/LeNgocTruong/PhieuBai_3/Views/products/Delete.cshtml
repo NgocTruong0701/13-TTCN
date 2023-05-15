@@ -1,0 +1,78 @@
+﻿@model PhieuBai_3.Models.product
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Xoa san pham</h2>
+
+<h3>Ban co muon xoa san pham nay?</h3>
+<div>
+    <h4>San pham</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.category.catname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.category.catname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.proname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.proname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.stock)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.stock)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.image)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.image)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.description)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xoa" class="btn btn-default" /> |
+            @Html.ActionLink("Quay lai", "Index")
+        </div>
+    }
+</div>
+
+@if (ViewBag.Error != null)
+{
+    <div class="alert alert-danger" role="alert">@ViewBag.Error</div>
+}
