@@ -1,0 +1,100 @@
+﻿@model IEnumerable<QLThuVien.Models.SACH>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Danh sách cuốn sách</h2>
+
+<p>
+    @Html.ActionLink("Thêm sách mới", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CHUDESACH.tenChuDe)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NHAXUATBAN.tenNXB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TACGIA.tenTacGia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tenSach)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.namXB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.anhBia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.moTa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.giaSach)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.soBanLuu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.soTrang)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tinhTrang)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ngonNgu)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CHUDESACH.tenChuDe)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NHAXUATBAN.tenNXB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TACGIA.tenTacGia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tenSach)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.namXB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.anhBia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.moTa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.giaSach)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.soBanLuu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.soTrang)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tinhTrang)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ngonNgu)
+        </td>
+        <td>
+            @Html.ActionLink("Chỉnh sửa", "Edit", new { id=item.maSach }) |
+            @Html.ActionLink("Chi tiết", "Details", new { id=item.maSach }) |
+            @Html.ActionLink("Xóa", "Delete", new { id=item.maSach })
+        </td>
+    </tr>
+}
+
+</table>

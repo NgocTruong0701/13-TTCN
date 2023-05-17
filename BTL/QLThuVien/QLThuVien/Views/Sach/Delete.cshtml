@@ -1,0 +1,121 @@
+﻿@model QLThuVien.Models.SACH
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Thông tin sách xóa</h2>
+
+<h3>Bạn có muốn xóa cuốn sách này?</h3>
+<div>
+    <h4>Sách</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CHUDESACH.tenChuDe)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CHUDESACH.tenChuDe)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NHAXUATBAN.tenNXB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NHAXUATBAN.tenNXB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TACGIA.tenTacGia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TACGIA.tenTacGia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tenSach)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tenSach)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.namXB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.namXB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.anhBia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.anhBia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.moTa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.moTa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.giaSach)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.giaSach)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.soBanLuu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.soBanLuu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.soTrang)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.soTrang)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tinhTrang)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tinhTrang)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ngonNgu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ngonNgu)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xóa" class="btn btn-default" /> |
+            @Html.ActionLink("Quay trở lại", "Index")
+        </div>
+    }
+</div>
