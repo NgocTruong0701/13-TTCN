@@ -43,8 +43,9 @@
         <div class="form-group">
             @Html.LabelFor(model => model.anhBia, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.anhBia, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.anhBia, "", new { @class = "text-danger" })
+                <img src="~/Images/no-image.jpg" id="output" class="img-thumbnail" alt="anh" width="150" height="250" />
+                <p><label for="ufile" style="cursor:pointer">Chọn ảnh</label></p>
+                <input type="file" id="ufile" name="ImageFile" style="display:none" onchange="loadFile(event)" />
             </div>
         </div>
 
@@ -131,6 +132,13 @@
 <div>
     @Html.ActionLink("Quay trở lại", "Index")
 </div>
+
+<script>
+    var loadFile = function (event) {
+        var image = document.getElementById('output');
+        image.src = URL.createObjectURL(event.target.files[0]);
+    }
+</script>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

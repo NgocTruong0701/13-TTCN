@@ -69,7 +69,11 @@
             @Html.DisplayFor(modelItem => item.namXB)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.anhBia)
+            @{ 
+                // lay path image
+                string ImagePath = "~/Images/SACH/" + item.anhBia;
+            }
+            <img src="@Url.Content(ImagePath)" width="200" class="img-thumbnail" />
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.moTa)

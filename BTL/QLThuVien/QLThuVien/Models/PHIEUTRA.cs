@@ -1,7 +1,8 @@
-namespace QLThuVien.Models
+﻿namespace QLThuVien.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
@@ -16,17 +17,27 @@ namespace QLThuVien.Models
         }
 
         [Key]
+        [Required(ErrorMessage = "Mã phiếu trả không được để trống")]
+        [DisplayName("Mã phiếu trả")]
         [StringLength(10)]
         public string maPhieuTra { get; set; }
 
+        [Required(ErrorMessage = "Ngày trả không được để trống")]
+        [DisplayName("Ngày trả")]
         public DateTime ngayTra { get; set; }
 
         [Column(TypeName = "money")]
+        [Required(ErrorMessage = "Tiền hoàn trả không được để trống")]
+        [DisplayName("Tiền hoàn trả")]
         public decimal tienHoanTra { get; set; }
 
-        public DateTime ngayPhat { get; set; }
+        [Required(ErrorMessage = "Tiền phạt không được để trống")]
+        [DisplayName("Tiền phạt")]
+        [Column(TypeName = "money")]
+        public decimal tienPhat { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Mã người mượn không được để trống")]
+        [DisplayName("Mã người mượn")]
         [StringLength(10)]
         public string maNguoiMuon { get; set; }
 

@@ -18,6 +18,8 @@
         }
 
         [Key]
+        [Required(ErrorMessage = "Mã chủ đề không được để trống")]
+        [DisplayName("Mã chủ đề")]
         [StringLength(10)]
         public string maChuDe { get; set; }
 
@@ -27,6 +29,7 @@
         public string tenChuDe { get; set; }
 
         [NotMapped]
+        [DisplayName("Tổng lượng sách")]
         public int tongLuongSach {
             get
             {

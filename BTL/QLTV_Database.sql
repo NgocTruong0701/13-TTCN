@@ -93,6 +93,11 @@ create table PHIEUTRA (
 	foreign key (maNguoiMuon) references NGUOIMUON(maNguoiMuon)
 )
 
+ALTER TABLE PHIEUTRA
+DROP COLUMN ngayPhat;
+
+alter table PHIEUTRA add  tienPhat money
+
 create table PHIEUTRA_SACH (
 	maSach nchar(10) not null,
 	maPhieuTra nchar(10) not null,
