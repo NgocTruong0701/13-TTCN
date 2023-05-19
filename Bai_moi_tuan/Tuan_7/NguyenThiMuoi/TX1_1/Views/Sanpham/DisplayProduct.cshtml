@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "DisplayProduct";
+}
+
+<h2>Display Product</h2>
+<br />
+<h3>Danh sách 1</h3>
+<table border="1" style="border-collapse:collapse" width="400" cellpadding="5">
+    <tr>
+        <th>Ma SP</th>
+        <th>Ten SP</th>
+        <th>So luong</th>
+        <th>Gia tien</th>
+        <th>Thanh tien</th>
+    </tr>
+    @{ foreach (var item in Model)
+        {
+            if (item.soluong > 60)
+            {
+                <tr>
+                    <td>@item.masp</td>
+                    <td>@item.tensp</td>
+                    <td>@item.soluong</td>
+                    <td>@item.giatien</td>
+                    <td>@item.thanhtien</td>
+                </tr>
+            }
+        }
+    }
+</table>
+<br />
+<h3>Danh sách 2</h3>
+<table border="1" style="border-collapse:collapse" width="400" cellpadding="5">
+    <tr>
+        <th>Ma SP</th>
+        <th>Ten SP</th>
+        <th>So luong</th>
+        <th>Gia tien</th>
+        <th>Thanh tien</th>
+    </tr>
+    @{ foreach (var item in Model)
+        {
+            if (item.giatien < 200)
+            {
+                <tr>
+                    <td>@item.masp</td>
+                    <td>@item.tensp</td>
+                    <td>@item.soluong</td>
+                    <td>@item.giatien</td>
+                    <td>@item.thanhtien</td>
+                </tr>
+            }
+        }
+    }
+</table>
