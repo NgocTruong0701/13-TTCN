@@ -1,0 +1,5 @@
+﻿@model IEnumerable<THtuan11.Models.Category>
+    @foreach(var item in Model)
+            {
+                <li><a href="/shop/danhmuc/@item.Categoryid">@item.CategoryName</a></li>
+            }

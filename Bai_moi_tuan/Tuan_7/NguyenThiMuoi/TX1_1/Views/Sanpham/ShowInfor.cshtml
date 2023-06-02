@@ -1,0 +1,57 @@
+﻿@model TX1_1.Models.Sanpham
+
+@{
+    ViewBag.Title = "ShowInfor";
+}
+
+<h2>Thông tin sản phẩm</h2>
+
+<div>
+    <h4>Sản phẩm</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.masp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.masp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tensp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tensp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.soluong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.soluong)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.giatien)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.giatien)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.thanhtien)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.thanhtien)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "DisplayProduct")
+</p>

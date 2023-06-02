@@ -1,0 +1,35 @@
+﻿table, tr, td, th{
+    border: solid;
+    border-color:black;
+}
+
+.header{
+    background-color: #3366FF;
+    font-family: 'Times New Roman';
+}
+
+    .header .text-right {
+        color: white;
+        text-align:right;
+        padding-right:10%;
+    }
+
+ul{
+    list-style-type:none; 
+}
+
+ul li{
+    display:inline;
+}
+
+    ul li a {
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        line-height: 30px;
+        text-decoration: none;
+        padding-right: 25px;
+        padding-left: 10px;
+        font-weight:bold;
+    }
+
+

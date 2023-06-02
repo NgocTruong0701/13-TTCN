@@ -1,0 +1,21 @@
+﻿<Window x:Class="ontap.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ontap"
+        mc:Ignorable="d"
+        Title="Window1" Height="450" Width="800" Loaded="Window_Loaded">
+    <Grid>
+        <DataGrid Name="dgtk" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Mã sản phẩm" Binding="{Binding MaSp}"/>
+                <DataGridTextColumn Header="Tên sản phẩm" Binding="{Binding TenSp}"/>
+                <DataGridTextColumn Header="Mã loại" Binding="{Binding MaLoai}"/>
+                <DataGridTextColumn Header="Đơn giá" Binding="{Binding DonGia}"/>
+                <DataGridTextColumn Header="Số lượng" Binding="{Binding SoLuong}"/>
+                <DataGridTextColumn Header="Thành tiền" Binding="{Binding ThanhTien}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
