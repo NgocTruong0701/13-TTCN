@@ -1,0 +1,38 @@
+﻿@model IEnumerable<THtuan11.Models.Product>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h3>Danh sách toàn bộ sản phẩm</h3>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<div class="row">
+    <h2>@ViewBag.CategoryName</h2>
+    @foreach (var item in Model)
+    {
+        <div class="col-sm-6 col-md-4 col-lg-3 col-xg-2 table-bordered text-center">
+            Mã sản phẩm: <b>@Html.DisplayFor(modelItem => item.Categoryid)<br /></b>
+
+            Tên sản phẩm: <b>@Html.DisplayFor(modelItem => item.ProdName)<br /></b>
+            Mô tả: <b>@Html.DisplayFor(modelItem => item.Description)<br /></b>
+
+            @{
+                var path = "~/content/Images/" + item.ImagePath;
+                <img src="@Url.Content(path)" width="150px" />
+            }
+            <br />
+            Giá tiền: <b>@Html.DisplayFor(modelItem => item.Price)<br /></b>
+
+            @Html.ActionLink("Edit", "Edit", new { id = item.Pid }) |
+            @Html.ActionLink("Details", "Details", new { id = item.Pid }) |
+
+        </div>
+
+    }
+
+
+</div>
+
