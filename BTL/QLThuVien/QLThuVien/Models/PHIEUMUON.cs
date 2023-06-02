@@ -11,10 +11,6 @@
     public partial class PHIEUMUON
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public PHIEUMUON()
-        {
-            PHIEUMUON_SACH = new HashSet<PHIEUMUON_SACH>();
-        }
 
         [Key]
         [Required(ErrorMessage = "Mã phiếu mượn không được để trống")]
@@ -40,6 +36,11 @@
         [DisplayName("Ngày trả")]
         public DateTime ngayTra { get; set; }
 
+        [Required(ErrorMessage = "Mã sách không được để trống")]
+        [DisplayName("Mã sách")]
+        [StringLength(10)]
+        public string maSach { get; set; }
+
         [Required(ErrorMessage = "Mã người mượn không được để trống")]
         [DisplayName("Mã người mượn")]
         [StringLength(10)]
@@ -47,7 +48,5 @@
 
         public virtual NGUOIMUON NGUOIMUON { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PHIEUMUON_SACH> PHIEUMUON_SACH { get; set; }
     }
 }

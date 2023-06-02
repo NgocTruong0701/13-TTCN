@@ -13,7 +13,6 @@
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public PHIEUTRA()
         {
-            PHIEUTRA_SACH = new HashSet<PHIEUTRA_SACH>();
         }
 
         [Key]
@@ -42,8 +41,5 @@
         public string maNguoiMuon { get; set; }
 
         public virtual NGUOIMUON NGUOIMUON { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PHIEUTRA_SACH> PHIEUTRA_SACH { get; set; }
     }
 }

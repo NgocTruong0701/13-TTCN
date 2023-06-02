@@ -1,0 +1,54 @@
+﻿@model IEnumerable<QLThuVien.Models.SACH>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .margin-card {
+        margin: 8px !important;
+    }
+
+    .padding-card {
+        padding: 20px 10px !important;
+    }
+
+    img {
+        object-fit: cover;
+    }
+</style>
+
+<h2>Danh sách cuốn sách</h2>
+
+<div class="container">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-sm-6 col-md-4 col-lg-3 col-xg-2 table-bordered text-center margin-card padding-card">
+
+                <b>
+                    @{
+                        // lay path image
+                        string ImagePath = "~/Images/SACH/" + item.anhBia;
+                    }
+                    <img src="@Url.Content(ImagePath)" width="200" class="img-thumbnail img-fluid" />
+                </b><br /><br />
+                Sách: <b>@Html.DisplayFor(modelItem => item.tenSach)</b><br />
+                Chủ đề: <b>@Html.DisplayFor(modelItem => item.CHUDESACH.tenChuDe)</b><br />
+                Tác giả: <b>@Html.DisplayFor(modelItem => item.TACGIA.tenTacGia)</b><br />
+                Tình trạng: <b>@Html.DisplayFor(modelItem => item.tinhTrang)</b><br />
+                Số trang: <b>@Html.DisplayFor(modelItem => item.soTrang)</b><br />
+                Ngôn ngữ: <b>@Html.DisplayFor(modelItem => item.ngonNgu)</b><br />
+                Giá tiền mượn: <b>@Html.DisplayFor(modelItem => item.giaSach)</b><br /><br />
+                @Html.ActionLink("Mượn", "#", new { id = item.maSach }) |
+                @Html.ActionLink("Chi tiết", "Details", new { id = item.maSach })
+
+            </div>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

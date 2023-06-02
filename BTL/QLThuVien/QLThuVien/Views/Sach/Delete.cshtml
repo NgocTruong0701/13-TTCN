@@ -57,7 +57,10 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.anhBia)
+            @{
+                var path = "~/Images/SACH/" + Model.anhBia;
+                <img src="@Url.Content(path)" width="200" />
+            }
         </dd>
 
         <dt>
@@ -110,12 +113,18 @@
 
     </dl>
 
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
             <input type="submit" value="Xóa" class="btn btn-default" /> |
             @Html.ActionLink("Quay trở lại", "Index")
         </div>
+    }
+
+    @if (ViewBag.Error != null)
+    {
+        <div class="alert alert-danger" role="alert">@ViewBag.Error</div>
     }
 </div>

@@ -16,9 +16,7 @@ namespace QLThuVien.Models
         public virtual DbSet<NGUOIMUON> NGUOIMUONs { get; set; }
         public virtual DbSet<NHAXUATBAN> NHAXUATBANs { get; set; }
         public virtual DbSet<PHIEUMUON> PHIEUMUONs { get; set; }
-        public virtual DbSet<PHIEUMUON_SACH> PHIEUMUON_SACH { get; set; }
         public virtual DbSet<PHIEUTRA> PHIEUTRAs { get; set; }
-        public virtual DbSet<PHIEUTRA_SACH> PHIEUTRA_SACH { get; set; }
         public virtual DbSet<QUANTRIVIEN> QUANTRIVIENs { get; set; }
         public virtual DbSet<SACH> SACHes { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
@@ -70,19 +68,6 @@ namespace QLThuVien.Models
                 .Property(e => e.maNguoiMuon)
                 .IsFixedLength();
 
-            modelBuilder.Entity<PHIEUMUON>()
-                .HasMany(e => e.PHIEUMUON_SACH)
-                .WithRequired(e => e.PHIEUMUON)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<PHIEUMUON_SACH>()
-                .Property(e => e.maSach)
-                .IsFixedLength();
-
-            modelBuilder.Entity<PHIEUMUON_SACH>()
-                .Property(e => e.maPhieuMuon)
-                .IsFixedLength();
-
             modelBuilder.Entity<PHIEUTRA>()
                 .Property(e => e.maPhieuTra)
                 .IsFixedLength();
@@ -93,19 +78,6 @@ namespace QLThuVien.Models
 
             modelBuilder.Entity<PHIEUTRA>()
                 .Property(e => e.maNguoiMuon)
-                .IsFixedLength();
-
-            modelBuilder.Entity<PHIEUTRA>()
-                .HasMany(e => e.PHIEUTRA_SACH)
-                .WithRequired(e => e.PHIEUTRA)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<PHIEUTRA_SACH>()
-                .Property(e => e.maSach)
-                .IsFixedLength();
-
-            modelBuilder.Entity<PHIEUTRA_SACH>()
-                .Property(e => e.maPhieuTra)
                 .IsFixedLength();
 
             modelBuilder.Entity<QUANTRIVIEN>()
@@ -131,16 +103,6 @@ namespace QLThuVien.Models
             modelBuilder.Entity<SACH>()
                 .Property(e => e.maNXB)
                 .IsFixedLength();
-
-            modelBuilder.Entity<SACH>()
-                .HasMany(e => e.PHIEUMUON_SACH)
-                .WithRequired(e => e.SACH)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<SACH>()
-                .HasMany(e => e.PHIEUTRA_SACH)
-                .WithRequired(e => e.SACH)
-                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<TACGIA>()
                 .Property(e => e.maTacGia)

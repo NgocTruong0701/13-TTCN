@@ -13,8 +13,6 @@
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public SACH()
         {
-            PHIEUMUON_SACH = new HashSet<PHIEUMUON_SACH>();
-            PHIEUTRA_SACH = new HashSet<PHIEUTRA_SACH>();
         }
 
         [Key]
@@ -84,11 +82,8 @@
         public virtual NHAXUATBAN NHAXUATBAN { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PHIEUMUON_SACH> PHIEUMUON_SACH { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PHIEUTRA_SACH> PHIEUTRA_SACH { get; set; }
-
         public virtual TACGIA TACGIA { get; set; }
     }
 }

@@ -5,13 +5,32 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<style>
+    .custom-textarea {
+        width: 100%;
+        padding: 10px;
+        font-size: 14px;
+        line-height: 1.4;
+        color: #495057;
+        border: 1px solid #ced4da;
+        border-radius: .25rem;
+        transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    }
+
+        .custom-textarea:focus {
+            outline: none;
+            border-color: #80bdff;
+            box-shadow: 0 0 0 .2rem rgba(0, 123, 255, .25);
+        }
+</style>
+
 <h2>Thông tin sách sửa</h2>
 
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("Edit", "Sach", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Sách</h4>
         <hr />
@@ -37,15 +56,19 @@
         <div class="form-group">
             @Html.LabelFor(model => model.anhBia, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.anhBia, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.anhBia, "", new { @class = "text-danger" })
+                @{
+                    var path = "~/Images/SACH/" + Model.anhBia;
+                    <img src="@Url.Content(path)" id="output" class="img-thumbnail" alt="anh" width="200" />
+                    <p><label for="ufile" style="cursor:pointer">Chọn ảnh</label></p>
+                    <input type="file" id="ufile" name="ImageFile" style="display:none" onchange="loadFile(event)" />
+                }
             </div>
         </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.moTa, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.moTa, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.TextAreaFor(model => model.moTa, new { htmlAttributes = new { @class = "form-control textarea-lg custom-textarea", rows = 10, cols = 50 } })
                 @Html.ValidationMessageFor(model => model.moTa, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -122,6 +145,11 @@
     </div>
 }
 
+@if (ViewBag.Error != null)
+{
+    <div class="alert alert-danger" role="alert">@ViewBag.Error</div>
+}
+
 <div>
     @Html.ActionLink("Quay lại", "Index")
 </div>
@@ -129,3 +157,10 @@
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
+
+<script>
+    var loadFile = function (event) {
+        var image = document.getElementById('output');
+        image.src = URL.createObjectURL(event.target.files[0]);
+    }
+</script>
