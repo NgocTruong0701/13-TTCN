@@ -1,0 +1,66 @@
+﻿@model OnTap_1.Models.Sanpham
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Sanpham</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Danhmuc.TenDanhmuc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Danhmuc.TenDanhmuc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tenvd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tenvd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mota)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mota)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TenAnh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenAnh)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Giatien)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Giatien)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Soluong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Soluong)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Mavd }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
