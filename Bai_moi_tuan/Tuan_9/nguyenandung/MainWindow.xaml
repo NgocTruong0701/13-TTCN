@@ -1,0 +1,43 @@
+﻿<Window x:Class="ontaptx2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ontaptx2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="800" Width="800" FontSize="20" FontFamily="Times New Roman" Loaded="Window_Loaded">
+    <Grid>
+        <Label Content="Quản lý thông tin nhân viên" HorizontalAlignment="Left" Margin="339,40,0,0" VerticalAlignment="Top"/>
+        <Label Content="Mã sinh viên" HorizontalAlignment="Left" Margin="100,100,0,0" VerticalAlignment="Top"/>
+        <DatePicker HorizontalAlignment="Left" Margin="280,202,0,0" VerticalAlignment="Top" SelectedDate="1/1/2000" Grid.Row="1" Grid.Column="3"/>
+        <DataGrid Name="dgDs" Margin="0,392,0,135" SelectionChanged="DataGrid_SelectionChanged" AutoGenerateColumns="False">
+            <DataGrid.Columns >
+                <DataGridTextColumn Header="Mã nhân viên" Binding="{Binding hoten}"/>
+                <DataGridTextColumn Header="Họ tên" Binding="{Binding lop}"/>
+                <DataGridTextColumn Header="Ngày sinh" Binding="{Binding ns}"/>
+                <DataGridTextColumn Header="Giới tính"/>
+                <DataGridTextColumn Header="Phòng ban"/>
+                <DataGridTextColumn Header="Hệ số lương"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="Ngày sinh" HorizontalAlignment="Left" Margin="100,200,0,0" VerticalAlignment="Top"/>
+        <Label Content="Giới tính" HorizontalAlignment="Left" Margin="100,250,0,0" VerticalAlignment="Top"/>
+        <Label Content="Phòng ban" HorizontalAlignment="Left" Margin="100,300,0,0" VerticalAlignment="Top"/>
+        <Label Content="Hệ số lương" HorizontalAlignment="Left" Margin="100,350,0,0" VerticalAlignment="Top"/>
+        <Label Content="Họ tên" HorizontalAlignment="Left" Margin="100,150,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="280,100,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <TextBox HorizontalAlignment="Left" Margin="280,150,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <TextBox HorizontalAlignment="Left" Margin="280,354,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <ComboBox HorizontalAlignment="Left" Margin="280,312,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem IsSelected="True">Quần áo</ComboBoxItem>
+            <ComboBoxItem>Giày dép</ComboBoxItem>
+        </ComboBox>
+        <RadioButton Content="Nam" HorizontalAlignment="Left" Margin="279,266,0,0" VerticalAlignment="Top" IsChecked="True"/>
+        <RadioButton Content="Nữ" HorizontalAlignment="Left" Margin="350,266,0,0" VerticalAlignment="Top"/>
+
+
+
+
+    </Grid>
+    <Window.Resources></Window.Resources>
+</Window>
