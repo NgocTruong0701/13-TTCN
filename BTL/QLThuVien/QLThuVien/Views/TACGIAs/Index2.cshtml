@@ -1,0 +1,19 @@
+﻿@model  IEnumerable < QLThuVien.Models.TACGIA>
+
+@Styles.Render("~/Content/css")
+@Scripts.Render("~/bundles/modernizr")
+
+<style>
+    li{
+        padding: 10px 0;
+    }
+
+    li a{
+        color: #000;
+    }
+</style>
+
+@foreach (var item in Model)
+{
+    <li class="nav-link"><a href="/tacgia/@item.maTacGia" class="nav-link">@item.tenTacGia</a></li>
+}

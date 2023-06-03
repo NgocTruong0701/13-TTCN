@@ -1,0 +1,54 @@
+﻿@model QLThuVien.Models.TACGIA
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Chi tiết tác giả</h2>
+
+<div>
+    <h4>TÁC GIẢ</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.tenTacGia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tenTacGia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.namSinh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.namSinh)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.moTa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.moTa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.anh)
+        </dt>
+
+        <dd>
+            @{
+                var path = "~/Images/TACGIA/" + Model.anh;
+                <img src="@Url.Content(path)" width="200" />
+            }
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Chỉnh sửa", "Edit", new { id = Model.maTacGia }) |
+    @Html.ActionLink("Quay lại", "Index")
+</p>

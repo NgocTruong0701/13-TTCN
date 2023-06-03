@@ -31,6 +31,10 @@
         [NotMapped]
         [DisplayName("Tổng lượng sách")]
         public int tongLuongSach {
+            set
+            {
+                this.tongLuongSach = 0;
+            }
             get
             {
                 using (var context = new Model1())

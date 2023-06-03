@@ -1,13 +1,17 @@
-﻿@model IEnumerable<QLThuVien.Models.SACH>
+﻿@model PagedList.IPagedList<QLThuVien.Models.SACH>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+@using QLThuVien.Models;
 
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
 }
 
 <style>
     .margin-card {
         margin: 8px !important;
+        width: fit-content !important;
     }
 
     .padding-card {
@@ -17,36 +21,55 @@
     img {
         object-fit: cover;
     }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
 </style>
 
-<h2>Danh sách cuốn sách</h2>
-
+<h2 style="margin:40px 0 0 0">Danh sách các sách</h2>
 <div class="container">
     <div class="row">
-        @foreach (var item in Model)
-        {
-            <div class="col-sm-6 col-md-4 col-lg-3 col-xg-2 table-bordered text-center margin-card padding-card">
+        <div class="row col-md-10">
 
-                <b>
-                    @{
-                        // lay path image
-                        string ImagePath = "~/Images/SACH/" + item.anhBia;
-                    }
-                    <img src="@Url.Content(ImagePath)" width="200" class="img-thumbnail img-fluid" />
-                </b><br /><br />
-                Sách: <b>@Html.DisplayFor(modelItem => item.tenSach)</b><br />
-                Chủ đề: <b>@Html.DisplayFor(modelItem => item.CHUDESACH.tenChuDe)</b><br />
-                Tác giả: <b>@Html.DisplayFor(modelItem => item.TACGIA.tenTacGia)</b><br />
-                Tình trạng: <b>@Html.DisplayFor(modelItem => item.tinhTrang)</b><br />
-                Số trang: <b>@Html.DisplayFor(modelItem => item.soTrang)</b><br />
-                Ngôn ngữ: <b>@Html.DisplayFor(modelItem => item.ngonNgu)</b><br />
-                Giá tiền mượn: <b>@Html.DisplayFor(modelItem => item.giaSach)</b><br /><br />
-                @Html.ActionLink("Mượn", "#", new { id = item.maSach }) |
-                @Html.ActionLink("Chi tiết", "Details", new { id = item.maSach })
+            @foreach (var item in Model)
+            {
+                <div class="col-sm-6 col-md-4 col-lg-3 col-xg-2 table-bordered text-center margin-card padding-card">
 
-            </div>
-        }
+                    <b>
+                        @{
+                            // lay path image
+                            string ImagePath = "~/Images/SACH/" + item.anhBia;
+                        }
+                        <img src="@Url.Content(ImagePath)" width="200" class="img-thumbnail img-fluid" />
+                    </b><br /><br />
+                    Sách: <b>@Html.DisplayFor(modelItem => item.tenSach)</b><br />
+                    Chủ đề: <b>@Html.DisplayFor(modelItem => item.CHUDESACH.tenChuDe)</b><br />
+                    Tác giả: <b>@Html.DisplayFor(modelItem => item.TACGIA.tenTacGia)</b><br />
+                    Tình trạng: <b>@Html.DisplayFor(modelItem => item.tinhTrang)</b><br />
+                    Số trang: <b>@Html.DisplayFor(modelItem => item.soTrang)</b><br />
+                    Ngôn ngữ: <b>@Html.DisplayFor(modelItem => item.ngonNgu)</b><br />
+                    Giá tiền mượn: <b>@Html.DisplayFor(modelItem => item.giaSach)</b><br /><br />
+                    @Html.ActionLink("Mượn", "#", new { id = item.maSach }) |
+                    @Html.ActionLink("Chi tiết", "DetailsUser", new { id = item.maSach })
+                </div>
+            }
+        </div>
+        <div class="col-md-2">
+            <h2>Tác giả</h2>
+            <ul>
+                @{ Html.RenderAction("Index2", "TACGIAs"); }
+            </ul>
+            <hr />
+            <h2>Chủ đề</h2>
+            <ul>
+                @{ Html.RenderAction("Index2", "ChuDeSach"); }
+            </ul>
+        </div>
     </div>
+    Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount
+    @Html.PagedListPager(Model, page => Url.Action("IndexUser", new { page, currentFilter = ViewBag.CurrentFilter }))
 </div>
 
 @section Scripts {

@@ -1,0 +1,82 @@
+﻿@model QLThuVien.Models.NGUOIMUON
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    .login-container {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+    }
+
+        .login-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+            font-weight: bold;
+        }
+
+    .form-control {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .btn-primary {
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+        .btn-primary:hover {
+            background-color: #0069d9;
+        }
+</style>
+
+<div class="login-container">
+    <h2>Login</h2>
+
+    @using (Html.BeginForm("Login", "Home", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.taiKhoan)
+            @Html.TextBoxFor(model => model.taiKhoan, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.taiKhoan)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.matKhau)
+            @Html.PasswordFor(model => model.matKhau, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.matKhau)
+        </div>
+
+        <button type="submit" class="btn btn-primary">Login</button>
+    }
+</div>

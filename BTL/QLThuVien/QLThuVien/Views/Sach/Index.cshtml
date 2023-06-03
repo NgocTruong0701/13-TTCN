@@ -1,4 +1,8 @@
-﻿@model IEnumerable<QLThuVien.Models.SACH>
+﻿@*@model IEnumerable<QLThuVien.Models.SACH>*@
+@model PagedList.IPagedList<QLThuVien.Models.SACH>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+@using QLThuVien.Models;
 
 @{
     ViewBag.Title = "Index";
@@ -13,92 +17,96 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.CHUDESACH.tenChuDe)
+            Tên chủ đề
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.NHAXUATBAN.tenNXB)
+            Tên nhà xuất bản
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.TACGIA.tenTacGia)
+            Tên tác giả
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.tenSach)
+            Tên sách
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.namXB)
+            Nhà xuất bản
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.anhBia)
+            Ảnh bìa
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.moTa)
+            Mô tả
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.giaSach)
+            Giá sách
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.soBanLuu)
+            Số bản lưu
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.soTrang)
+            Số trang
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.tinhTrang)
+            Tình trạng
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ngonNgu)
+            Ngôn ngữ
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.CHUDESACH.tenChuDe)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NHAXUATBAN.tenNXB)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TACGIA.tenTacGia)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.tenSach)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.namXB)
-        </td>
-        <td>
-            @{ 
-                // lay path image
-                string ImagePath = "~/Images/SACH/" + item.anhBia;
-            }
-            <img src="@Url.Content(ImagePath)" width="200" class="img-thumbnail" />
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.moTa)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.giaSach)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.soBanLuu)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.soTrang)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.tinhTrang)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ngonNgu)
-        </td>
-        <td>
-            @Html.ActionLink("Chỉnh sửa", "Edit", new { id=item.maSach }) |
-            @Html.ActionLink("Chi tiết", "Details", new { id=item.maSach }) |
-            @Html.ActionLink("Xóa", "Delete", new { id=item.maSach })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CHUDESACH.tenChuDe)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NHAXUATBAN.tenNXB)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TACGIA.tenTacGia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tenSach)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.namXB)
+            </td>
+            <td>
+                @{
+                    // lay path image
+                    string ImagePath = "~/Images/SACH/" + item.anhBia;
+                }
+                <img src="@Url.Content(ImagePath)" width="200" class="img-thumbnail" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.moTa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.giaSach)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.soBanLuu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.soTrang)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tinhTrang)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ngonNgu)
+            </td>
+            <td>
+                @Html.ActionLink("Chỉnh sửa", "Edit", new { id = item.maSach }) |
+                @Html.ActionLink("Chi tiết", "Details", new { id = item.maSach }) |
+                @Html.ActionLink("Xóa", "Delete", new { id = item.maSach })
+            </td>
+        </tr>
+    }
 
 </table>
+@*Dieu khien chuyen trang*@
+    Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page, currentFilter = ViewBag.CurrentFilter }))

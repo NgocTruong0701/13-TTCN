@@ -8,6 +8,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using QLThuVien.Models;
+using PagedList;
 
 namespace QLThuVien.Controllers
 {
@@ -16,21 +17,79 @@ namespace QLThuVien.Controllers
         private Model1 db = new Model1();
 
         // GET: Sach
-        public ActionResult Index()
+        public ActionResult Index(int? page)
         {
             var sACHes = db.SACHes.Include(s => s.CHUDESACH).Include(s => s.NHAXUATBAN).Include(s => s.TACGIA);
-            return View(sACHes.ToList());
+
+            // sap xep sach truoc khi phan trang
+            sACHes = sACHes.OrderBy(s => s.maSach);
+            int pageSize = 3; // bao nhieu 1 trang
+            int pageNumber = (page ?? 1); // bien kiem soat trang hien tai
+            return View(sACHes.ToPagedList(pageNumber, pageSize));
         }
 
         // GET: Sach for User
-        public ActionResult IndexUser()
+        public ActionResult IndexUser(int? page, string search, string currentFilter)
         {
             var sACHes = db.SACHes.Include(s => s.CHUDESACH).Include(s => s.NHAXUATBAN).Include(s => s.TACGIA);
-            return View(sACHes.ToList());
+
+            // lay gia tri cua bo loc du lieu hien tai
+            if (search != null)
+            {
+                page = 1; // trang dau
+            }
+            else
+            {
+                search = currentFilter;
+            }
+            ViewBag.CurrentFilter = search;
+
+            // tim kiem san pham theo ten
+            if (!String.IsNullOrEmpty(search))
+            {
+                sACHes = sACHes.Where(p => p.tenSach.Contains(search));
+            }
+
+            // sap xep sach truoc khi phan trang
+            sACHes = sACHes.OrderBy(s => s.maSach);
+            int pageSize = 3; // bao nhieu 1 trang
+            int pageNumber = (page ?? 1); // bien kiem soat trang hien tai
+            return View(sACHes.ToPagedList(pageNumber, pageSize));
+        }
+
+        // Tac gia id
+        [Route("tacgia/{maTacGia?}")]
+        public ActionResult BookBymaTacGia(string maTacGia)
+        {
+            ViewBag.TenTacGia = db.TACGIAs.SingleOrDefault(tg => tg.maTacGia.Equals(maTacGia)).tenTacGia;
+            return View(db.SACHes.Where(s => s.maTacGia.Equals(maTacGia)).ToList());
+        }
+
+        // Tac gia id
+        [Route("chudesach/{maChuDe?}")]
+        public ActionResult BookBymaChuDe(string maChuDe)
+        {
+            ViewBag.TenChuDe = db.CHUDESACHes.SingleOrDefault(tg => tg.maChuDe.Equals(maChuDe)).tenChuDe;
+            return View(db.SACHes.Where(s => s.maChuDe.Equals(maChuDe)).ToList());
         }
 
         // GET: Sach/Details/5
         public ActionResult Details(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            SACH sACH = db.SACHes.Find(id);
+            if (sACH == null)
+            {
+                return HttpNotFound();
+            }
+            return View(sACH);
+        }
+
+        // GET: Sach/Details/5
+        public ActionResult DetailsUser(string id)
         {
             if (id == null)
             {
@@ -256,7 +315,7 @@ namespace QLThuVien.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 ViewBag.Error = "Lỗi xóa dữ liệu!!" + ex.Message;
                 return View(sACH);

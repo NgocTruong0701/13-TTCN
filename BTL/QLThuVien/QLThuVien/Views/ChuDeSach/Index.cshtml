@@ -1,0 +1,38 @@
+﻿@model IEnumerable<QLThuVien.Models.CHUDESACH>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Chủ đề sách</h2>
+
+<p>
+    @Html.ActionLink("Thêm chủ đề mới", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.tenChuDe)
+        </th>
+        <th>@Html.DisplayNameFor(model => model.tongLuongSach)</th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.tenChuDe)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tongLuongSach)
+        </td>
+        <td>
+            @Html.ActionLink("Chỉnh sửa", "Edit", new { id=item.maChuDe }) |
+            @Html.ActionLink("Chi tiết", "Details", new { id=item.maChuDe }) |
+            @Html.ActionLink("Xóa", "Delete", new { id=item.maChuDe })
+        </td>
+    </tr>
+}
+
+</table>

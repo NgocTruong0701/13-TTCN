@@ -1,0 +1,27 @@
+﻿@model QLThuVien.Models.CHUDESACH
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Chi tiết chủ đề</h2>
+
+<div>
+    <h4>Chủ đề sách</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.tenChuDe)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tenChuDe)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Chỉnh sửa", "Edit", new { id = Model.maChuDe }) |
+    @Html.ActionLink("Quay lại", "Index")
+</p>

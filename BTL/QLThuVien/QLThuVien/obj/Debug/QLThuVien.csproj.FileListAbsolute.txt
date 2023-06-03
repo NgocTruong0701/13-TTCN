@@ -80,4 +80,7 @@ E:\HaUI\Nam_3_Ki_2\TTCN\13-TTCN\13-TTCN\BTL\QLThuVien\QLThuVien\obj\Debug\QLThuV
 E:\HaUI\Nam_3_Ki_2\TTCN\13-TTCN\13-TTCN\BTL\QLThuVien\QLThuVien\obj\Debug\QLThuVien.csproj.CopyComplete
 E:\HaUI\Nam_3_Ki_2\TTCN\13-TTCN\13-TTCN\BTL\QLThuVien\QLThuVien\obj\Debug\QLThuVien.dll
 E:\HaUI\Nam_3_Ki_2\TTCN\13-TTCN\13-TTCN\BTL\QLThuVien\QLThuVien\obj\Debug\QLThuVien.pdb
-E:\HaUI\Nam_3_Ki_2\TTCN\13-TTCN\13-TTCN\BTL\QLThuVien\QLThuVien\obj\Debug\QLThuVien.csproj.AssemblyReference.cache
+E:\HaUI\Nam_3_Ki_2\TTCN\13-TTCN\13-TTCN\BTL\QLThuVien\QLThuVien\bin\PagedList.dll
+E:\HaUI\Nam_3_Ki_2\TTCN\13-TTCN\13-TTCN\BTL\QLThuVien\QLThuVien\bin\PagedList.Mvc.dll
+E:\HaUI\Nam_3_Ki_2\TTCN\13-TTCN\13-TTCN\BTL\QLThuVien\QLThuVien\bin\PagedList.xml
+E:\HaUI\Nam_3_Ki_2\TTCN\13-TTCN\13-TTCN\BTL\QLThuVien\QLThuVien\bin\PagedList.Mvc.xml

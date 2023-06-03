@@ -36,6 +36,7 @@
         [StringLength(150)]
         public string moTa { get; set; }
 
+        [DisplayName("Ảnh")]
         [StringLength(50)]
         public string anh { get; set; }
 

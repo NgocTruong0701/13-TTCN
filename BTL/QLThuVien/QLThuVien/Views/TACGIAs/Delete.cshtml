@@ -1,0 +1,66 @@
+﻿@model QLThuVien.Models.TACGIA
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Xóa</h2>
+
+<h3>Bạn muốn xóa tác giả này?</h3>
+<div>
+    <h4>Tác giả</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.tenTacGia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tenTacGia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.namSinh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.namSinh)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.moTa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.moTa)
+        </dd>
+
+        <dt>
+            @{
+                var path = "~/Images/TACGIA/" + Model.anh;
+                <img src="@Url.Content(path)" width="200" />
+            }
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.anh)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xóa" class="btn btn-default" /> |
+            @Html.ActionLink("Quay lại", "Index")
+        </div>
+    }
+
+    @if (ViewBag.Error != null)
+    {
+        <div class="alert alert-danger" role="alert">@ViewBag.Error</div>
+    }
+</div>
