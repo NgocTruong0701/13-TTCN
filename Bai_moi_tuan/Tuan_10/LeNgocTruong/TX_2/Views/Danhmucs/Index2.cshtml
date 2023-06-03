@@ -1,0 +1,6 @@
+﻿@model IEnumerable<TX_2.Models.Danhmuc>
+
+@foreach (var item in Model)
+{
+    <li class="nav-link"><a href="/shop/danhmuc/@item.MaDanhmuc" class="nav-link">@item.TenDanhmuc</a></li>
+}

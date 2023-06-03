@@ -1,0 +1,35 @@
+﻿@model IEnumerable<TX_2.Models.Sanpham>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Danh sách sản phẩm của danh mục</h2>
+
+<p>
+    @Html.ActionLink("Tạo mới", "Create")
+</p>
+
+<h3>@ViewBag.TenDanhMuc</h3>
+<div class="container">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-sm-6 col-md-4 col-lg-3 col-xg-2 table-bordered text-center margin-card">
+                Mã sản phẩm: <b>@Html.DisplayFor(modelItem => item.Mavd)</b><br />
+                Mã danh mục: <b>@Html.DisplayFor(modelItem => item.MaDanhmuc)</b><br />
+                Tên sản phẩm: <b>@Html.DisplayFor(modelItem => item.Tenvd)</b><br />
+                Mô tả: <b>@Html.DisplayFor(modelItem => item.Mota)</b><br />
+                @{
+                    var path = "~/Content/Images/" + item.TenAnh;
+                    <img src="@Url.Content(path)" width="150" />
+                }<br />
+                Số lượng: <b>@Html.DisplayFor(modelItem => item.Soluong)</b><br />
+                Giá: <b>@Html.DisplayFor(modelItem => item.Giatien)</b><br />
+                @Html.ActionLink("Sửa", "Edit", new { id = item.Mavd }) |
+                @Html.ActionLink("Chi tiết", "Details", new { id = item.Mavd })
+            </div>
+        }
+    </div>
+</div>
