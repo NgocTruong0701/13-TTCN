@@ -96,16 +96,15 @@ namespace QLThuVien.Controllers
                     phieumuon.ngayTra = DateTime.Parse(form["ngayTra"]);
                     phieumuon.loaiMuon = form["loaiMuon"];
                     phieumuon.tienTheCho = Decimal.Parse(form["tienTheCho"]);
-
+                    phieumuon.maNguoiMuon = currentUser.maNguoiMuon;
                     string tenSach = form["tenSach"];
-                    string tenNguoiMuon = form["tenNguoiMuon"];
 
                     SACH Sach = db.SACHes.SingleOrDefault(s => s.tenSach.Equals(tenSach));
-                    Sach.soBanLuu -= 1;
-                    string maNguoiMuon = db.NGUOIMUONs.SingleOrDefault(s => s.tenNguoiMuon.Equals(tenNguoiMuon)).maNguoiMuon;
-
                     phieumuon.maSach = Sach.maSach;
-                    phieumuon.maNguoiMuon = maNguoiMuon;
+                    Sach.soBanLuu -= 1;
+
+                    
+                    
 
                     db.PHIEUMUONs.Add(phieumuon);
                     db.SaveChanges();

@@ -84,3 +84,4 @@ E:\HaUI\Nam_3_Ki_2\TTCN\13-TTCN\13-TTCN\BTL\QLThuVien\QLThuVien\bin\PagedList.dl
 E:\HaUI\Nam_3_Ki_2\TTCN\13-TTCN\13-TTCN\BTL\QLThuVien\QLThuVien\bin\PagedList.Mvc.dll
 E:\HaUI\Nam_3_Ki_2\TTCN\13-TTCN\13-TTCN\BTL\QLThuVien\QLThuVien\bin\PagedList.xml
 E:\HaUI\Nam_3_Ki_2\TTCN\13-TTCN\13-TTCN\BTL\QLThuVien\QLThuVien\bin\PagedList.Mvc.xml
+E:\HaUI\Nam_3_Ki_2\TTCN\13-TTCN\13-TTCN\BTL\QLThuVien\QLThuVien\obj\Debug\QLThuVien.csproj.AssemblyReference.cache
