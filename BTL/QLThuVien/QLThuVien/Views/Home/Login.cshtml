@@ -1,5 +1,4 @@
-﻿@model QLThuVien.Models.NGUOIMUON
-@{
+﻿@{
     ViewBag.Title = "Login";
     Layout = "~/Views/Shared/_LayoutUser.cshtml";
 }
@@ -61,22 +60,23 @@
 <div class="login-container">
     <h2>Login</h2>
 
-    @using (Html.BeginForm("Login", "Home", FormMethod.Post))
-    {
+    <form action="@Url.Action("Login", "Home")" method="post">
         @Html.AntiForgeryToken()
 
         <div class="form-group">
-            @Html.LabelFor(model => model.taiKhoan)
-            @Html.TextBoxFor(model => model.taiKhoan, new { @class = "form-control" })
-            @Html.ValidationMessageFor(model => model.taiKhoan)
+            <label for="taiKhoan">Tài khoản</label>
+            <input type="text" name="taiKhoan" class="form-control" />
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.matKhau)
-            @Html.PasswordFor(model => model.matKhau, new { @class = "form-control" })
-            @Html.ValidationMessageFor(model => model.matKhau)
+            <label for="matKhau">Mật khẩu</label>
+            <input type="password" name="matKhau" class="form-control" />
         </div>
 
         <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+    @if (ViewBag.Error != null)
+    {
+        <div class="alert alert-danger" role="alert">@ViewBag.Error</div>
     }
 </div>

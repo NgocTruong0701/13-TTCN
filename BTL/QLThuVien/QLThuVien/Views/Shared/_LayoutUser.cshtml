@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     <style>
@@ -36,19 +37,18 @@
     </style>
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Trang chủ", "IndexUser", "Sach", new { area = "" }, new { @class = "navbar-brand" })</li>
-                    <li>@Html.ActionLink("Tất cả sách", "IndexUser", "Sach")</li>
+            @Html.ActionLink("Trang chủ", "Index", "Sach", new { area = "" }, new { @class = "navbar-brand" })
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+                    <li>@Html.ActionLink("Tất cả sách", "IndexUser", "Sach", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Thông tin phiếu mượn", "IndexUser", "PHIEUMUONs", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Thông tin phiếu trả", "IndexUser", "PHIEUTRAs", new { area = "" }, new { @class = "nav-link" })</li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="search-form">
@@ -58,7 +58,7 @@
                                 <div class="input-group">
                                     @Html.TextBox("search", ViewBag.CurrentFilter as string, new { @class = "form-control", placeholder = "Tìm kiếm" })
                                     <span class="input-group-btn">
-                                        <button type="submit" class="btn btn-default">Tìm kiếm</button>
+                                        <button type="submit" class="btn btn-default" style="color: black; background: #fff; margin-left: 5px" >Tìm kiếm</button>
                                     </span>
                                 </div>
                             </div>
@@ -67,12 +67,12 @@
                 </ul>
             </div>
         </div>
-    </div>
+    </nav>
     <div class="container body-content">
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Thư viện Đại Học Công Nghiệp Hà Nội</p>
+            <p>&copy; @DateTime.Now.Year - Thư viện đại học Công Nghiệp Hà Nội</p>
         </footer>
     </div>
 

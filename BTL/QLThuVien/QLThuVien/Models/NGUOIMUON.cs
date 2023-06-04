@@ -34,7 +34,7 @@ using System.ComponentModel;
         public string soDT { get; set; }
 
         [Required(ErrorMessage = "Địa chỉ không được để trống")]
-        [DisplayName("Mã tác giả")]
+        [DisplayName("Địa chỉ")]
         [StringLength(30)]
         public string diaChi { get; set; }
 

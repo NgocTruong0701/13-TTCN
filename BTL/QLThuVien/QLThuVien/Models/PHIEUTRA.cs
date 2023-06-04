@@ -35,11 +35,17 @@
         [Column(TypeName = "money")]
         public decimal tienPhat { get; set; }
 
+        [Required(ErrorMessage = "Mã phiếu mượn không được để trống")]
+        [DisplayName("Mã phiếu mượn")]
+        [StringLength(10)]
+        public string maPhieuMuon { get; set; }
+
         [Required(ErrorMessage = "Mã người mượn không được để trống")]
         [DisplayName("Mã người mượn")]
         [StringLength(10)]
         public string maNguoiMuon { get; set; }
 
         public virtual NGUOIMUON NGUOIMUON { get; set; }
+        
     }
 }

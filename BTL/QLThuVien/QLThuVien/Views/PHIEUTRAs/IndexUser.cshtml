@@ -1,0 +1,54 @@
+﻿@model IEnumerable<QLThuVien.Models.PHIEUTRA>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<h2>Danh sách phiếu trả</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.maPhieuTra)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.maPhieuMuon)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ngayTra)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tienHoanTra)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tienPhat)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.maPhieuTra)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.maPhieuMuon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ngayTra)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tienHoanTra)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tienPhat)
+            </td>
+        </tr>
+    }
+
+</table>
+<div>
+    @Html.ActionLink("Quay lại", "IndexUser", "Sach")
+</div>
+

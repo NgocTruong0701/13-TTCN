@@ -51,7 +51,7 @@
                     Số trang: <b>@Html.DisplayFor(modelItem => item.soTrang)</b><br />
                     Ngôn ngữ: <b>@Html.DisplayFor(modelItem => item.ngonNgu)</b><br />
                     Giá tiền mượn: <b>@Html.DisplayFor(modelItem => item.giaSach)</b><br /><br />
-                    @Html.ActionLink("Mượn", "#", new { id = item.maSach }) |
+                    <a href="~/thuvien/muonsach/@item.maSach" class="btn-link">Mượn</a>|
                     @Html.ActionLink("Chi tiết", "DetailsUser", new { id = item.maSach })
                 </div>
             }

@@ -1,0 +1,43 @@
+﻿@model QLThuVien.Models.NHAXUATBAN
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>NHAXUATBAN</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.tenNXB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tenNXB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.soDT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.soDT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.diaChi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.diaChi)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.maNXB }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

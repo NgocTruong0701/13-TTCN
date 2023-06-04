@@ -1,0 +1,51 @@
+﻿@model QLThuVien.Models.PHIEUTRA
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PHIEUTRA</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NGUOIMUON.tenNguoiMuon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NGUOIMUON.tenNguoiMuon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ngayTra)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ngayTra)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tienHoanTra)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tienHoanTra)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tienPhat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tienPhat)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.maPhieuTra }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

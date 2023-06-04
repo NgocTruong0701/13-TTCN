@@ -1,0 +1,64 @@
+﻿@model IEnumerable<QLThuVien.Models.PHIEUMUON>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NGUOIMUON.tenNguoiMuon)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ngayMuon)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.loaiMuon)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tienTheCho)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ngayTra)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.maSach)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NGUOIMUON.tenNguoiMuon)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ngayMuon)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.loaiMuon)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tienTheCho)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ngayTra)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.maSach)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.maPhieuMuon }) |
+            @Html.ActionLink("Details", "Details", new { id=item.maPhieuMuon }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.maPhieuMuon })
+        </td>
+    </tr>
+}
+
+</table>

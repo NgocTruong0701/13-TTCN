@@ -58,15 +58,15 @@ namespace QLThuVien.Controllers
         }
 
         // Tac gia id
-        [Route("tacgia/{maTacGia?}")]
+        [Route("thuvien/tacgia/{maTacGia?}")]
         public ActionResult BookBymaTacGia(string maTacGia)
         {
             ViewBag.TenTacGia = db.TACGIAs.SingleOrDefault(tg => tg.maTacGia.Equals(maTacGia)).tenTacGia;
             return View(db.SACHes.Where(s => s.maTacGia.Equals(maTacGia)).ToList());
         }
 
-        // Tac gia id
-        [Route("chudesach/{maChuDe?}")]
+        // Chu de id
+        [Route("thuvien/chudesach/{maChuDe?}")]
         public ActionResult BookBymaChuDe(string maChuDe)
         {
             ViewBag.TenChuDe = db.CHUDESACHes.SingleOrDefault(tg => tg.maChuDe.Equals(maChuDe)).tenChuDe;

@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+    var PhieuTra = ViewBag.PhieuTra;
+}
+
+<h2>Trả sách</h2>
+
+<h3>Bạn có muốn trả sách của phiếu mượn này?</h3>
+<div>
+    <h4>Thông tin phiếu trả</h4>
+    <hr />
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        if(PhieuTra != null)
+        {
+            <div class="form-actions no-color">
+                <label class="control-label col-md-2">Mã phiếu trả</label>
+                <input type="text" readonly="readonly" name="maPhieuTra" class="form-control" value="@PhieuTra.maPhieuTra" />
+                <label class="control-label col-md-2">Mã phiếu mượn</label>
+                <input type="text" readonly="readonly" name="maPhieuMuon" class="form-control" value="@PhieuTra.maPhieuMuon" />
+                <label class="control-label col-md-2">Ngày trả</label>
+                <input type="text" readonly="readonly" name="ngayTra" class="form-control" value="@PhieuTra.ngayTra" />
+                <label class="control-label col-md-2">Tiền phạt</label>
+                <input type="text" readonly="readonly" name="tienPhat" class="form-control" value="@PhieuTra.tienPhat" />
+                <label class="control-label col-md-2">Tiền hoàn trả</label>
+                <input type="text" readonly="readonly" name="tienHoanTra" class="form-control" value="@PhieuTra.tienHoanTra" />
+
+                <input type="hidden" readonly="readonly" name="maNguoiMuon" class="form-control" value="@PhieuTra.maNguoiMuon" />
+
+                <input type="submit" value="Trả" class="btn btn-default" /> |
+                @Html.ActionLink("Quay lại", "Index", new { @class = "btn btn-default" })
+            </div>
+        }
+    }
+
+    @if (ViewBag.Error != null)
+    {
+        <div class="alert alert-danger" role="alert">@ViewBag.Error</div>
+    }
+</div>

@@ -18,15 +18,18 @@ namespace QLThuVien.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Login(NGUOIMUON model)
+        public ActionResult Login(FormCollection form)
         {
-            if (ModelState.IsValid)
-            {
-                // Kiểm tra tài khoản và mật khẩu
+            string taiKhoan = form["taiKhoan"];
+            string matKhau = form["matKhau"];
 
-                var nguoiMuon = db.NGUOIMUONs.FirstOrDefault(n => n.taiKhoan == model.taiKhoan && n.matKhau == model.matKhau);
+            if (!string.IsNullOrEmpty(taiKhoan) && !string.IsNullOrEmpty(matKhau))
+            {
+                var nguoiMuon = db.NGUOIMUONs.FirstOrDefault(n => n.taiKhoan.Equals(taiKhoan) && n.matKhau.Equals(matKhau));
                 if (nguoiMuon != null)
                 {
+                    // Lưu thông tin người dùng vào Session
+                    Session["CurrentUser"] = nguoiMuon;
                     // Đăng nhập thành công, thực hiện các hành động khác
                     return RedirectToAction("IndexUser", "Sach");
                 }
@@ -35,7 +38,13 @@ namespace QLThuVien.Controllers
                     ModelState.AddModelError("", "Tài khoản hoặc mật khẩu không chính xác.");
                 }
             }
-            return View(model);
+            else
+            {
+                ModelState.AddModelError("", "Vui lòng nhập đầy đủ thông tin.");
+            }
+
+            return View();
         }
+
     }
 }

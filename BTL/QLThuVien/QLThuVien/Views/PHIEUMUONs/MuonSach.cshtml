@@ -1,0 +1,101 @@
+﻿@model QLThuVien.Models.PHIEUMUON
+@{
+    ViewBag.Title = "MuonSach";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<h2>Thông tin phiếu mượn</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Phiếu mượn</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.maPhieuMuon, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.maPhieuMuon, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.maPhieuMuon, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ngayMuon, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ngayMuon, new { htmlAttributes = new { @class = "form-control", type = "date" } })
+                @Html.ValidationMessageFor(model => model.ngayMuon, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        @*<div class="form-group">
+                @Html.LabelFor(model => model.loaiMuon, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.loaiMuon, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.loaiMuon, "", new { @class = "text-danger" })
+                </div>
+            </div>*@
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.loaiMuon, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.loaiMuon, new SelectList(new[] { "Đọc tại chỗ", "Mang về" }), "Chọn loại mượn", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.loaiMuon, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.tienTheCho, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.tienTheCho, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.tienTheCho, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ngayTra, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ngayTra, new { htmlAttributes = new { @class = "form-control", type = "date" } })
+                @Html.ValidationMessageFor(model => model.ngayTra, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @*@Html.LabelFor(model => model.maSach, "Sách", htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <label for="maSach" class="form-label col-md-2">Sách</label>
+            <div class="col-md-10">
+                <input type="text" id="maSach" name="tenSach" value="@ViewBag.tenSach" class="form-control" readonly="readonly" />
+                @*@Html.EditorFor(ViewBag.tenSach, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.ValidationMessageFor(model => model.maSach, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @*@Html.LabelFor(model => model.maNguoiMuon, "Người mượn", htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <label for="maNguoiMuon" class="form-label col-md-2">Người mượn</label>
+            <div class="col-md-10">
+                <input type="text" id="maNguoiMuon" name="tenNguoiMuon" value="@ViewBag.tenNguoiMuon" class="form-control" readonly="readonly" />
+                @*@Html.EditorFor(ViewBag.tenNguoiMuon, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.ValidationMessageFor(model => model.maNguoiMuon, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Mượn" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+@if (ViewBag.Error != null)
+{
+    <div class="alert alert-danger" role="alert">@ViewBag.Error</div>
+}
+
+<div>
+    @Html.ActionLink("Quay lại", "IndexUser", "Sach")
+</div>

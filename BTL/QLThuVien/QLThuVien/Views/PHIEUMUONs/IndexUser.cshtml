@@ -1,0 +1,54 @@
+﻿@model IEnumerable<QLThuVien.Models.PhieuMuonViewModel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<h2>Danh sách phiếu mượn</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Sách
+        </th>
+        <th>
+            Ngày mượn
+        </th>
+        <th>
+            Loại mượn
+        </th>
+        <th>
+            Tiền thế chỗ
+        </th>
+        <th>
+            Ngày trả
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.TenSach
+            </td>
+            <td>
+                @item.NgayMuon
+            </td>
+            <td>
+                @item.LoaiMuon
+            </td>
+            <td>
+                @item.TienTheCho
+            </td>
+            <td>
+                @item.NgayTra
+            </td>
+            <td><a href="~/thuvien/trasach/@item.maPhieuMuon" class="btn-link">Trả sách</a></td>
+        </tr>
+    }
+
+</table>
+<div>
+    @Html.ActionLink("Quay lại", "IndexUser", "Sach")
+</div>

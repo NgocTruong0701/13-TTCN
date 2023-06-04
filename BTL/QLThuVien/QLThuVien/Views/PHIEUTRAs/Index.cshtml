@@ -1,0 +1,52 @@
+﻿@model IEnumerable<QLThuVien.Models.PHIEUTRA>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NGUOIMUON.tenNguoiMuon)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ngayTra)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tienHoanTra)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tienPhat)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NGUOIMUON.tenNguoiMuon)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ngayTra)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tienHoanTra)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tienPhat)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.maPhieuTra }) |
+            @Html.ActionLink("Details", "Details", new { id=item.maPhieuTra }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.maPhieuTra })
+        </td>
+    </tr>
+}
+
+</table>

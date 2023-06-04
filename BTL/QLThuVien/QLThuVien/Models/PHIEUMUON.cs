@@ -47,6 +47,6 @@
         public string maNguoiMuon { get; set; }
 
         public virtual NGUOIMUON NGUOIMUON { get; set; }
-
+        public virtual SACH SACH { get; set; }
     }
 }

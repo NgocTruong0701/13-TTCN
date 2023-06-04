@@ -1,0 +1,58 @@
+﻿@model IEnumerable<QLThuVien.Models.NGUOIMUON>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Thêm mới", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.tenNguoiMuon)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.soDT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.diaChi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.taiKhoan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.matKhau)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.tenNguoiMuon)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.soDT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.diaChi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.taiKhoan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.matKhau)
+        </td>
+        <td>
+            @Html.ActionLink("Chỉnh sửa", "Edit", new { id=item.maNguoiMuon }) |
+            @Html.ActionLink("Chi tiết", "Details", new { id=item.maNguoiMuon }) |
+            @Html.ActionLink("Xóa", "Delete", new { id=item.maNguoiMuon })
+        </td>
+    </tr>
+}
+
+</table>
