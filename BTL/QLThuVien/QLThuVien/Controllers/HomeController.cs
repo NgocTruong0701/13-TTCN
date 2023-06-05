@@ -82,8 +82,6 @@ namespace QLThuVien.Controllers
             return View();
         }
 
-
-
         public ActionResult Logout()
         {
             Session["CurrentUser"] = null;

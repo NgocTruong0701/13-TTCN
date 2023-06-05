@@ -17,7 +17,7 @@ namespace QLThuVien
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}",
-                defaults: new { controller = "Sach", action = "Index"}
+                defaults: new { controller = "Sach", action = "IndexUser"}
             );
         }
     }
