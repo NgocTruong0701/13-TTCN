@@ -1,15 +1,12 @@
 ﻿@model IEnumerable<QLThuVien.Models.PHIEUMUON>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Danh sách phiếu mượn";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Danh sách phiếu mượn</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table class="table">
     <tr>
         <th>
@@ -54,9 +51,7 @@
             @Html.DisplayFor(modelItem => item.maSach)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.maPhieuMuon }) |
-            @Html.ActionLink("Details", "Details", new { id=item.maPhieuMuon }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.maPhieuMuon })
+            @Html.ActionLink("Chi tiết", "Details", new { id=item.maPhieuMuon })
         </td>
     </tr>
 }

@@ -1,14 +1,14 @@
 ﻿@model IEnumerable<QLThuVien.Models.NHAXUATBAN>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Danh sách nhà xuất bản";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Danh sách nhà xuất bản</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Thêm nhà xuất bản mới", "Create")
 </p>
 <table class="table">
     <tr>
@@ -36,9 +36,9 @@
             @Html.DisplayFor(modelItem => item.diaChi)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.maNXB }) |
-            @Html.ActionLink("Details", "Details", new { id=item.maNXB }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.maNXB })
+            @Html.ActionLink("Chỉnh sửa", "Edit", new { id=item.maNXB }) |
+            @Html.ActionLink("Chi tiết", "Details", new { id=item.maNXB }) |
+            @Html.ActionLink("Xóa", "Delete", new { id=item.maNXB })
         </td>
     </tr>
 }

@@ -18,8 +18,17 @@ namespace QLThuVien.Controllers
         // GET: PHIEUTRAs
         public ActionResult Index()
         {
-            var pHIEUTRAs = db.PHIEUTRAs.Include(p => p.NGUOIMUON);
-            return View(pHIEUTRAs.ToList());
+            var currentUser = Session["CurrentUser"] as QUANTRIVIEN;
+            if (currentUser != null)
+            {
+                var pHIEUTRAs = db.PHIEUTRAs.Include(p => p.NGUOIMUON);
+                return View(pHIEUTRAs.ToList());
+            }
+            else
+            {
+                ViewBag.Error = "Vui lòng đăng nhập";
+                return RedirectToAction("LoginAdmin", "Home");
+            }
         }
 
         public ActionResult IndexUser()

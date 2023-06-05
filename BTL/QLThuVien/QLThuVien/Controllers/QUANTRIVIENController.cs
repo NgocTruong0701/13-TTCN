@@ -17,7 +17,18 @@ namespace QLThuVien.Controllers
         // GET: QUANTRIVIEN
         public ActionResult Index()
         {
-            return View(db.QUANTRIVIENs.ToList());
+            var currentUser = Session["CurrentUser"] as QUANTRIVIEN;
+            if (currentUser != null)
+            {
+                return View(db.QUANTRIVIENs.ToList());
+            }
+            else
+            {
+                ViewBag.Error = "Vui lòng đăng nhập";
+                return RedirectToAction("LoginAdmin", "Home");
+            }
+
+
         }
 
         // GET: QUANTRIVIEN/Details/5

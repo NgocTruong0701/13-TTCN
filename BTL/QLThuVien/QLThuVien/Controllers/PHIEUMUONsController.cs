@@ -19,8 +19,19 @@ namespace QLThuVien.Controllers
         // GET: PHIEUMUONs
         public ActionResult Index()
         {
-            var pHIEUMUONs = db.PHIEUMUONs.Include(p => p.NGUOIMUON);
-            return View(pHIEUMUONs.ToList());
+            var currentUser = Session["CurrentUser"] as QUANTRIVIEN;
+            if (currentUser != null)
+            {
+                var pHIEUMUONs = db.PHIEUMUONs.Include(p => p.NGUOIMUON);
+                return View(pHIEUMUONs.ToList());
+            }
+            else
+            {
+                ViewBag.Error = "Vui lòng đăng nhập";
+                return RedirectToAction("LoginAdmin", "Home");
+            }
+
+            
         }
 
         public ActionResult IndexUser()

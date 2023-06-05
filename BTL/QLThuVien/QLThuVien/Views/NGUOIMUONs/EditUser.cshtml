@@ -1,11 +1,11 @@
 ﻿@model QLThuVien.Models.NGUOIMUON
 
 @{
-    ViewBag.Title = "Chỉnh sửa thông tin người mượn";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Thông tin người mượn";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
 }
 
-<h2>Chỉnh sửa thông tin người mượn</h2>
+<h2>Thông tin cá nhân</h2>
 
 @using (Html.BeginForm())
 {
@@ -66,5 +66,5 @@
 }
 
 <div>
-    @Html.ActionLink("Quay lại", "Index")
+    @Html.ActionLink("Quay lại", "IndexUser", "Sach")
 </div>

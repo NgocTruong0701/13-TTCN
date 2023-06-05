@@ -278,6 +278,9 @@
     <Content Include="Views\PHIEUMUONs\IndexUser.cshtml" />
     <Content Include="Views\PHIEUTRAs\TraSach.cshtml" />
     <Content Include="Views\PHIEUTRAs\IndexUser.cshtml" />
+    <Content Include="Views\Home\Register.cshtml" />
+    <Content Include="Views\NGUOIMUONs\EditUser.cshtml" />
+    <Content Include="Views\Home\LoginAdmin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

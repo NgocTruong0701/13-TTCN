@@ -11,7 +11,7 @@
 <body>
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
         <div class="container">
-            
+
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -23,6 +23,16 @@
                     <li>@Html.ActionLink("Chủ đề sách", "Index", "ChuDeSach", new { area = "" }, new { @class = "nav-link" })</li>
                     <li>@Html.ActionLink("Nhà xuất bản", "Index", "NHAXUATBANs", new { area = "" }, new { @class = "nav-link" })</li>
                     <li>@Html.ActionLink("Người mượn", "Index", "NGUOIMUONs", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Phiếu mượn", "Index", "PHIEUMUONs", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Phiếu trả", "Index", "PHIEUTRAs", new { area = "" }, new { @class = "nav-link" })</li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        @Html.ActionLink("Đăng nhập", "LoginAdmin", "Home", new { area = "" }, new { @class = "nav-link" })
+                    </li>
+                    <li>
+                        @Html.ActionLink("Đăng xuất", "LogoutAdmin", "Home", new { area = "" }, new { @class = "nav-link" })
+                    </li>
                 </ul>
             </div>
         </div>

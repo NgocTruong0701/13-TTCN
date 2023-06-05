@@ -19,13 +19,24 @@ namespace QLThuVien.Controllers
         // GET: Sach
         public ActionResult Index(int? page)
         {
-            var sACHes = db.SACHes.Include(s => s.CHUDESACH).Include(s => s.NHAXUATBAN).Include(s => s.TACGIA);
+            var currentUser = Session["CurrentUser"] as QUANTRIVIEN;
+            if (currentUser != null)
+            {
+                var sACHes = db.SACHes.Include(s => s.CHUDESACH).Include(s => s.NHAXUATBAN).Include(s => s.TACGIA);
 
-            // sap xep sach truoc khi phan trang
-            sACHes = sACHes.OrderBy(s => s.maSach);
-            int pageSize = 3; // bao nhieu 1 trang
-            int pageNumber = (page ?? 1); // bien kiem soat trang hien tai
-            return View(sACHes.ToPagedList(pageNumber, pageSize));
+                // sap xep sach truoc khi phan trang
+                sACHes = sACHes.OrderBy(s => s.maSach);
+                int pageSize = 3; // bao nhieu 1 trang
+                int pageNumber = (page ?? 1); // bien kiem soat trang hien tai
+                return View(sACHes.ToPagedList(pageNumber, pageSize));
+            }
+            else
+            {
+                ViewBag.Error = "Vui lòng đăng nhập";
+                return RedirectToAction("LoginAdmin", "Home");
+            }
+
+                
         }
 
         // GET: Sach for User

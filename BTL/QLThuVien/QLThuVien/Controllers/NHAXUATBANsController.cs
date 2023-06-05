@@ -17,7 +17,18 @@ namespace QLThuVien.Controllers
         // GET: NHAXUATBANs
         public ActionResult Index()
         {
-            return View(db.NHAXUATBANs.ToList());
+            var currentUser = Session["CurrentUser"] as QUANTRIVIEN;
+            if (currentUser != null)
+            {
+                return View(db.NHAXUATBANs.ToList());
+            }
+            else
+            {
+                ViewBag.Error = "Vui lòng đăng nhập";
+                return RedirectToAction("LoginAdmin", "Home");
+            }
+
+            
         }
 
         // GET: NHAXUATBANs/Details/5

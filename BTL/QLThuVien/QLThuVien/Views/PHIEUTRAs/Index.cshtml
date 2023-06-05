@@ -1,15 +1,12 @@
 ﻿@model IEnumerable<QLThuVien.Models.PHIEUTRA>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Danh sách phiếu trả";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Danh sách phiếu trả</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table class="table">
     <tr>
         <th>
@@ -42,9 +39,7 @@
             @Html.DisplayFor(modelItem => item.tienPhat)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.maPhieuTra }) |
-            @Html.ActionLink("Details", "Details", new { id=item.maPhieuTra }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.maPhieuTra })
+            @Html.ActionLink("Chi tiết", "Details", new { id=item.maPhieuTra })
         </td>
     </tr>
 }

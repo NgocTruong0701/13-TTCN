@@ -17,7 +17,17 @@ namespace QLThuVien.Controllers
         // GET: TACGIAs
         public ActionResult Index()
         {
-            return View(db.TACGIAs.ToList());
+            var currentUser = Session["CurrentUser"] as QUANTRIVIEN;
+            if (currentUser != null)
+            {
+                return View(db.TACGIAs.ToList());
+            }
+            else
+            {
+                ViewBag.Error = "Vui lòng đăng nhập";
+                return RedirectToAction("LoginAdmin", "Home");
+            }
+           
         }
 
         public ActionResult Index2()

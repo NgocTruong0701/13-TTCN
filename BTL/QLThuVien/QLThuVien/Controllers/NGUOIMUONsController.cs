@@ -17,7 +17,18 @@ namespace QLThuVien.Controllers
         // GET: NGUOIMUONs
         public ActionResult Index()
         {
-            return View(db.NGUOIMUONs.ToList());
+            var currentUser = Session["CurrentUser"] as QUANTRIVIEN;
+            if (currentUser != null)
+            {
+                return View(db.NGUOIMUONs.ToList());
+            }
+            else
+            {
+                ViewBag.Error = "Vui lòng đăng nhập";
+                return RedirectToAction("LoginAdmin", "Home");
+            }
+
+            
         }
 
         // GET: NGUOIMUONs/Details/5
@@ -55,11 +66,11 @@ namespace QLThuVien.Controllers
                     db.NGUOIMUONs.Add(nGUOIMUON);
                     db.SaveChanges();
                 }
-                return RedirectToAction("Index");
+                return RedirectToAction("Login", "Home");
             }
             catch(Exception ex)
             {
-                ViewBag.Error = "Có lỗi: " + ex.Message;
+                ViewBag.Error = "Có lỗi: " + ex.ToString();
                 return View(nGUOIMUON);
             }
         }
@@ -79,12 +90,35 @@ namespace QLThuVien.Controllers
             return View(nGUOIMUON);
         }
 
+        public ActionResult EditUser()
+        {
+            var currentUser = Session["CurrentUser"] as NGUOIMUON;
+            if (currentUser == null)
+            {
+                return RedirectToAction("Login", "Home");
+            }
+            return View(currentUser);
+        }
+
         // POST: NGUOIMUONs/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "maNguoiMuon,tenNguoiMuon,soDT,diaChi,taiKhoan,matKhau")] NGUOIMUON nGUOIMUON)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(nGUOIMUON).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("IndexUser", "Sach");
+            }
+            return View(nGUOIMUON);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditUser([Bind(Include = "maNguoiMuon,tenNguoiMuon,soDT,diaChi,taiKhoan,matKhau")] NGUOIMUON nGUOIMUON)
         {
             if (ModelState.IsValid)
             {

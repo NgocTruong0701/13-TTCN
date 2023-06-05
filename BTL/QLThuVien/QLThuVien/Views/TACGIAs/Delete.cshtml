@@ -37,14 +37,14 @@
         </dd>
 
         <dt>
+            @Html.DisplayNameFor(model => model.anh)
+        </dt>
+
+        <dd>
             @{
                 var path = "~/Images/TACGIA/" + Model.anh;
                 <img src="@Url.Content(path)" width="200" />
             }
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.anh)
         </dd>
 
     </dl>

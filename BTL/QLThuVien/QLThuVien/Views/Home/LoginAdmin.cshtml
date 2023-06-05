@@ -1,6 +1,6 @@
 ﻿@{
     ViewBag.Title = "Login";
-    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <style>
@@ -60,7 +60,7 @@
 <div class="login-container">
     <h2>Login</h2>
 
-    <form action="@Url.Action("Login", "Home")" method="post">
+    <form action="@Url.Action("LoginAdmin", "Home")" method="post">
         @Html.AntiForgeryToken()
 
         <div class="form-group">
@@ -74,7 +74,6 @@
         </div>
 
         <button type="submit" class="btn btn-primary">Login</button>
-        <a href="/Home/Register" class="btn" >Đăng ký</a>
     </form>
     @if (ViewBag.Error != null)
     {
