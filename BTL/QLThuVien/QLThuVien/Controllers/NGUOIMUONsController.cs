@@ -111,7 +111,7 @@ namespace QLThuVien.Controllers
             {
                 db.Entry(nGUOIMUON).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("IndexUser", "Sach");
+                return RedirectToAction("Index", "Sach");
             }
             return View(nGUOIMUON);
         }
@@ -124,7 +124,7 @@ namespace QLThuVien.Controllers
             {
                 db.Entry(nGUOIMUON).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("IndexUser", "Sach");
             }
             return View(nGUOIMUON);
         }

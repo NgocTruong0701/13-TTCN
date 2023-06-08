@@ -70,7 +70,7 @@ namespace QLThuVien.Controllers
                 // Thực hiện các hành động với thông tin người dùng
                 PHIEUMUON phieumuon = new PHIEUMUON();
                 SACH sach = db.SACHes.SingleOrDefault(s => s.maSach.Equals(maSach));
-                var dbPT = db.PHIEUTRAs.Select(p => p);
+                var dbPT = db.PHIEUMUONs.Select(p => p);
                 int countPhieuMuon = dbPT.Count();
                 phieumuon.maPhieuMuon = "PM" + (countPhieuMuon + 1);
                 phieumuon.maSach = maSach;
